@@ -433,7 +433,7 @@ table.table td h2 span {
 }
 
 .bg-primary, .badge-primary {
-    background-color: #680a83 !important
+    background-color: #0083ff !important
 }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
@@ -483,7 +483,7 @@ a.bg-warning:focus, a.bg-warning:hover, button.bg-warning:focus, button.bg-warni
 }
 
 .bg-danger, .badge-danger {
-    background-color: #e84646 !important
+    background-color: #ff0000 !important
 }
 
 a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:hover {
@@ -527,13 +527,16 @@ a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:h
 }
 
 .btn-primary {
-    background-color: #680a83;
-    border: 1px solid #680a83
+    /* border: 1px solid;
+    border-radius: 5px; */
+    color: white;
+    background-color: #2bae66ff;
+    border: 1px solid #2bae66ff
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
-    background-color: #57086d;
-    border: 1px solid #57086d
+    background-color: rgb(32, 137, 79);
+    border: 1px solid rgb(37, 152, 89)
 }
 
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.focus:active, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
@@ -1268,6 +1271,10 @@ a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:h
 
 .progress.progress-lg {
     height: 18px
+}
+
+#row-settings-tab-flex{
+    justify-content: center;
 }
 
 .row.row-sm {
@@ -4232,7 +4239,8 @@ table .actions .btn {
     }
 
     .mini-sidebar .sidebar .sidebar-menu ul>li>a span {
-        display: none;
+        width: 1px;
+        padding-left: 15px;
         transition: all .2s ease-in-out;
         opacity: 0
     }
@@ -4722,7 +4730,7 @@ label {
 
 
 .sidebar-ul1 {
-    display: grid;
+    display: grid;  
 }
 
 .material-symbols-outlined {
@@ -4736,24 +4744,28 @@ label {
     margin: 0px 200px;
 }
 
+.chart-display-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
 .two-chart {
     display: flex;
-    gap: 50px;
     margin-top: 100px;
+    flex-wrap: wrap;
 }
 
 #pie-chart {
     display: block;
     box-sizing: border-box;
-    width: 600px;
-    height: 600px;
+    width: 550px !important;
+    height: 580px !important;
 }
 
 #worldChart {
     display: block;
     box-sizing: border-box;
-    height: 600px;
-    width: 735px;
+    height: 591px !important;
+    width: 720px !important;
 }
 
 #logo-small {
@@ -4769,7 +4781,7 @@ label {
 }
 
 #mini-logo {
-    margin-left: 10px;
+    margin-left: 23px;
     margin-bottom: 5px;
     margin-top: 8px;
 }
@@ -4784,5 +4796,139 @@ label {
 }
 
 .sidebar-menu ul ul a:hover{
-    background-color: black;
+    background-color: rgb(175, 175, 175);
+}
+#sidebar-icon{
+    /* display: contents; */
+    opacity: 1;
+}
+
+
+.dash-widget-icon-bg-primary-recovery{
+align-items: center;
+border-radius: 50%;
+color: white;
+background-color: 	#64db3c;
+display: inline-flex;
+font-size: 1.875rem;
+height: 50px;
+justify-content: center;
+line-height: 48px;
+text-align: center;
+width: 50px;
+}
+
+#submenu-a-flex{
+    display: flex;
+    align-items: center;
+}
+
+.container-2 {
+    padding : 0 7% ; 
+    }
+
+.header-title{ 
+    font-size:3.8rem;
+    line-height:0.8;
+    color: var(--dark-one);
+}
+
+.header-content .text{
+    margin: 2.15rem 0;
+}   
+
+.title-sm {
+    color:#08BD51; /* var(--dark-one); */
+    font-weight:600;
+    font-size:1.6rem;
+}
+
+
+.house img { 
+    width :430px ; 
+    height : 250px; 
+}
+
+.list-container {
+    margin-top :50px ; 
+    display : flex ; 
+    flex-wrap: wrap ; 
+    justify-content : space-between;
+}
+.left-col { 
+    flex-basis : 70% ; 
+}
+.right-col { 
+    flex-basis : 25% ;
+}
+.left-col h1 { 
+    color : #333 ; 
+    font-weight : 600;
+    margin-bottom : 30px ; 
+}
+.house { 
+    display : flex ; 
+    justify-content  : space-between ; 
+    flex-wrap : wrap ; 
+    padding : 30px 0 ;
+    border-top : 1px solid #ccc ; 
+}
+.house-img { 
+    flex-basis : 40% ; 
+}
+.house-info { 
+    flex-basis : 58% ; 
+    color : #555 ; 
+}
+.house-img img { 
+    width :100% ;
+    border-radius :12px ; 
+}
+.house-info h3 { 
+    font-weight : 600 ; 
+    color : #333 ; 
+    font-size : 22px ; 
+    margin : 4px 0 ;
+}
+.house-info i { 
+    color : #08BD51 ; 
+    font-size:18px;
+    margin:10px 1px;
+}
+
+.house-info a {
+    text-decoration: none;
+    color : #333;
+}
+
+.house-price { 
+    text-align : right ; 
+}
+.house-price h4 { 
+    font-size :20px ;
+}
+.house-price h4 span{ 
+    font-size : 16px; 
+    font-weight : 500 ;
+}
+.title-color { 
+    color:#08BD51;
+    font-size : 15px; 
+    font-weight : 500 ;
+}
+
+.hospital-text-align{
+    display: flex;
+    align-items: center;
+    margin: 8px 0px 8px 0px;
+
+}
+
+.hospital-title-flex{
+    display: flex;
+}
+
+.hospital-title-flex1{
+    display: flex;
+    text-align: initial;
 }

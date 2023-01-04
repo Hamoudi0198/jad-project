@@ -11,12 +11,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
-        let dailyCases = response.response[0].cases.new;
-		let criticalCases = response.response[0].cases.critical;
-		let deathCases = response.response[0].deaths.new;
-		let recoveryCases = response.response[0].cases.recovered;
-		let totalCases = response.response[0].cases.total;
-		let totalDeathCases = response.response[0].deaths.total;
+        let dailyCases = response.response[0].cases.new ??0;
+		let criticalCases = response.response[0].cases.critical ??0;
+		let deathCases = response.response[0].deaths.new ??0;
+		let recoveryCases = response.response[0].cases.recovered ??0;
+		let totalCases = response.response[0].cases.total ??0;
+		let totalDeathCases = response.response[0].deaths.total ??0;
 
 		let daily = document.getElementById('current-cases');
 		let critical =  document.getElementById('critical-cases');
@@ -40,12 +40,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => {
 
 
-        let dailyCases = response.response[0].cases.new;
-        let criticalCases = response.response[0].cases.critical;
-        let deathCases = response.response[0].deaths.new;
-        let recoverycases = response.response[0].cases.recovered;
-        let totalcases = response.response[0].cases.total;
-		let totaldeaths = response.response[0].deaths.total;
+        let dailyCases = response.response[0].cases.new ??0;
+        let criticalCases = response.response[0].cases.critical ??0;
+        let deathCases = response.response[0].deaths.new ??0;
+        let recoverycases = response.response[0].cases.recovered ??0;
+        let totalcases = response.response[0].cases.total ??0;
+		let totaldeaths = response.response[0].deaths.total ??0;
 
 		let daily = document.getElementById('daily-cases-us');
 		let critical = document.getElementById('critical-cases-us');
@@ -67,12 +67,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => response.json())
 	.then(response => {
 	
-		let dailyCases = response.response[0].cases.new;
-		let criticalCases = response.response[0].cases.critical;
-		let deathCases = response.response[0].deaths.new;
-		let recoverycases = response.response[0].cases.recovered;
-		let totalcases = response.response[0].cases.total;
-		let totaldeaths = response.response[0].deaths.total;
+		let dailyCases = response.response[0].cases.new ??0;
+		let criticalCases = response.response[0].cases.critical ??0;
+		let deathCases = response.response[0].deaths.new ??0;
+		let recoverycases = response.response[0].cases.recovered ??0;
+		let totalcases = response.response[0].cases.total ??0;
+		let totaldeaths = response.response[0].deaths.total ??0;
 
 
 		let daily = document.getElementById('daily-cases-in');
@@ -96,12 +96,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => response.json())
 	.then(response => {
 
-		let dailyCases = response.response[0].cases.new;
-		let criticalCases = response.response[0].cases.critical;
-		let deathCases = response.response[0].deaths.new;
-		let recoverycases = response.response[0].cases.recovered;
-		let totalcases = response.response[0].cases.total;
-		let totaldeaths = response.response[0].deaths.total;
+		let dailyCases = response.response[0].cases.new ??0;
+		let criticalCases = response.response[0].cases.critical ??0;
+		let deathCases = response.response[0].deaths.new ??0;
+		let recoverycases = response.response[0].cases.recovered ??0;
+		let totalcases = response.response[0].cases.total ??0;
+		let totaldeaths = response.response[0].deaths.total ??0;
 
 
 		let daily = document.getElementById('daily-cases-sp');
@@ -127,12 +127,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => response.json())
 	.then(response => {
 
-		let dailyCases = response.response[0].cases.new;
-		let criticalCases = response.response[0].cases.critical;
-		let deathCases = response.response[0].deaths.new;
-		let recoverycases = response.response[0].cases.recovered;
-		let totalcases = response.response[0].cases.total;
-		let totaldeaths = response.response[0].deaths.total;
+		let dailyCases = response.response[0].cases.new ??0;
+		let criticalCases = response.response[0].cases.critical ??0;
+		let deathCases = response.response[0].deaths.new ??0;
+		let recoverycases = response.response[0].cases.recovered ??0;
+		let totalcases = response.response[0].cases.total ??0;
+		let totaldeaths = response.response[0].deaths.total ??0;
 
 
 
@@ -158,12 +158,12 @@ fetch('https://covid-193.p.rapidapi.com/statistics?country=lebanon', options)
 	.then(response => response.json())
 	.then(response => {
 
-		let dailyCases = response.response[0].cases.new;
-		let criticalCases = response.response[0].cases.critical;
-		let deathCases = response.response[0].deaths.new;
-		let recoverycases = response.response[0].cases.recovered;
-		let totalcases = response.response[0].cases.total;
-		let totaldeaths = response.response[0].deaths.total;
+		let dailyCases = response.response[0].cases.new ??0;
+		let criticalCases = response.response[0].cases.critical ??0;
+		let deathCases = response.response[0].deaths.new ??0;
+		let recoverycases = response.response[0].cases.recovered ??0;
+		let totalcases = response.response[0].cases.total ??0;
+		let totaldeaths = response.response[0].deaths.total ??0;
 
 
 

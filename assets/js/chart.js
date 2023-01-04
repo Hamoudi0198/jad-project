@@ -1,12 +1,6 @@
 var xValues = ["Sore throat","Headache","Runny Nose","Blocked Nose ","Cough  ","Hoarse voice","Sneezing","Fatigue","Muscle pains/aches","Dizzy light-headed","Swollen neck glands","Eye soreness","Altered smell  ","Fever ","Shortness of breath","Earache ","Lost of smell",];
 var yValues = [13.25, 11.18, 9.13, 9.13, 9.13,8,7.30,6.16,5.70,4.12,3.45,3.19,2.96,2.51,2.51,2.28];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
+var barColors = ["#376288","#437AA8","#5D91BD","#739EC2","#89ADCC","#A4D7CF","#86C8BE","#6DBDA5","#5BB584","#57B77D","#46A96D","#429A64","#459263","#40875C","#3D8359","#355979"];
 
 new Chart("pie-chart", {
   type: "pie",
@@ -18,11 +12,10 @@ new Chart("pie-chart", {
     }]
   },
   options: {
-    title: {
-      display: true,
-      text: "Covid 19 Symptoms"
-    }
-  }
+    plugins: {
+        title: {
+            display: true,
+            text: 'Covid 19 Symp'}}}
 });
 
 const options = {
@@ -70,13 +63,16 @@ const options = {
         ]
       },
       options: {
+        plugins:{
+        title: {
+          display: true,
+          text: 'Covid 19 Symp'}},
         scales: {
          y1: {
            position: 'right'
          }
         }
-      }
-    });})
+      }})});
 
 
     
@@ -132,6 +128,10 @@ const options = {
             labels: ['United States', 'India', 'France', 'Germany', 'Brazil']
           },
           options: {
+            plugins:{
+            title: {
+              display: true,
+              text: 'Covid 19 Symp'}},
             scales: {
              B: {
                position: 'right'
@@ -139,4 +139,6 @@ const options = {
             }
           }
     });})
+
+
 
