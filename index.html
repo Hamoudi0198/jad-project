@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <title>Covid Center - Dashboard</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/style.css"> 
+<link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="icon" href="assets/img/Covidcenter_logo.png">
-
 </head>
 <body>
     <div class="main-wrapper">
@@ -22,35 +21,28 @@
                     <img src="assets/img/Covidcenter_logo.png" id="mini-logo" width="30" height="30">
                 </a>
             </div>
-    
             <a href="javascript:void(0);" id="toggle_btn">
                 <span class="material-symbols-outlined" id="material-symbols-outlined-menu">menu</span></a>
-                
-                <a class="mobile_btn" id="mobile_btn">
+            <a class="mobile_btn" id="mobile_btn">
                 <i class="fa fa-bars"></i>
-                </a>
-    
-                <ul class="nav user-menu">
-    
-    
-    
-                    <li class="nav-item dropdown has-arrow">
+            </a>
+            <ul class="nav user-menu">
+                <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
-                    <span class="user-img"><p id="account-name">name</p></span>
+                        <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
+                        <span class="user-img">
+                            <p id="account-name"></p>
+                        </span>
                     </a>
                     <div class="dropdown-menu">
-                    <div class="user-text">
-                    <h6>Seema Sisty</h6>
-                    <a class="dropdown-item" href="profileSetting.html">My profile</a>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                        <div class="user-text">
+                            <h6>Seema Sisty</h6>
+                            <a class="dropdown-item" href="profileSetting.html">My profile</a>
+                            <a class="dropdown-item" href="login.html">Logout</a>
+                        </div>
                     </div>
-                    </div>
-                    </li>
-                    </ul>
-    
-    
-    
+                </li>
+            </ul>
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-inner slimscroll">
                     <div id="sidebar-menu" class="sidebar-menu">
@@ -58,29 +50,29 @@
                             <li class="menu-title">
                             </li>
                             <li class="active">
-                                <a href="index.html"><span class="material-symbols-outlined" id="sidebar-icon">home</span><span>Dashboard</span></a>
-                            </li>   
-                            <li>
-                                <a href="chart.html"><span class="material-symbols-outlined" id="sidebar-icon">analytics</span><span>Chart</span></a>
+                                <a href="index.html"><span class="material-symbols-outlined"id="sidebar-icon">home</span><span>Dashboard</span></a>
                             </li>
                             <li>
-                                <a href="rapid test.html"><span class="material-symbols-outlined" id="sidebar-icon">labs</span><span>Rapid Test</span></a>
+                                <a href="chart.html"><span class="material-symbols-outlined"id="sidebar-icon">analytics</span><span>Chart</span></a>
+                            </li>
+                            <li>
+                                <a href="rapid test.html"><span class="material-symbols-outlined"id="sidebar-icon">labs</span><span>Rapid Test</span></a>
                             </li>
                             <li class="submenu">
-                                <a href="#"><span>Plasma Donor</span><span class="menu-arrow"></span></a>
+                                <a href="#"><span class="material-symbols-outlined"id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><spanclass="menu-arrow"></span></a>
                                 <ul style="display: none;">
-                                <li><a href="signup-donor.php" id="submenu-a-flex"><span class="material-symbols-outlined">note_alt</span>Register as donor</a></li>
-                                <li><a href="list-of-donor.php" id="submenu-a-flex"><span class="material-symbols-outlined">description</span>List of donors</a></li>
+                                    <li><a href="signup-donor.html" id="submenu-a-flex"><spanclass="material-symbols-outlined">note_alt</span><spanid="dropmenu-span-register">Register as donor</span></a></li>
+                                    <li><a href="list-of-donor.php" id="submenu-a-flex"><spanclass="material-symbols-outlined">description</span><spanid="dropmenu-span-register">List of donors</span></a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="hospital.html"><span class="material-symbols-outlined" id="sidebar-icon">home_health</span><span>Hospital</span></a>
+                                <a href="hospital.html"><span class="material-symbols-outlined"id="sidebar-icon">home_health</span><span>Hospital</span></a>
                             </li>
                             <li>
-                                <a href="news.html"><span class="material-symbols-outlined" id="sidebar-icon">newspaper</span><span>News</span></a>
+                                <a href="news.html"><span class="material-symbols-outlined"id="sidebar-icon">newspaper</span><span>News</span></a>
                             </li>
                             <li>
-                                <a href="profileSetting.html"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>Settings</span></a>
+                                <a href="profileSetting.html"><span class="material-symbols-outlined"id="sidebar-icon">settings</span><span>Settings</span></a>
                             </li>
                         </ul>
                         </li>
@@ -88,105 +80,12 @@
                     </div>
                 </div>
             </div>
-    </div>
-    
-        
+        </div>
         <div class="page-wrapper">
             <div class="content container-fluid">
                 <div class="row">
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-primary">
-                                        <i class="fa-solid fa-virus-covid"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Daily Cases (lebanon/daily)</p>
-                                        <p id="current-cases" class="count"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-warning">
-                                        <i class="fa-solid fa-triangle-exclamation"></i>                                    
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Critical Cases (lebanon/daily)</p>
-                                        <p class="count" id="critical-cases"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-danger"><!-- hay daily cases  -->
-                                        <i class="fa-solid fa-skull-crossbones"></i>   
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Deaths(lebanon/daily)</p>
-                                        <p class="count" id="death-cases"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-primary">
-                                        <i class="fa-solid fa-virus-covid"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Total Cases (lebanon)</p>
-                                        <p class="count" id="total-cases"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon-bg-primary-recovery">
-                                        <i class="fa-solid fa-syringe"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Recovery (lebanon)</p>
-                                        <p id="recovered-cases" class="count"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-sm-4 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-danger">
-                                        <i class="fa-solid fa-skull-crossbones"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <p class="count-title">Total Deaths (lebanon)</p>
-                                        <p id="total-death-cases" class="count"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="row">
+                <div class="row1">
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">
@@ -243,7 +142,7 @@
                                                     <div class="font-weight-600 text-danger" id="total-deaths-sp"></div>
                                                 </td>
                                             </tr>
-    
+
                                             <tr>
                                                 <td class="text-nowrap">
                                                     <div class="font-weight-600">China</div>
@@ -275,15 +174,16 @@
                                 </div>
                             </div>
                         </div>
-    
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script src="assets/js/jquery-3.6.0.min.js"></script>
-<script src= "assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/dashboardDataService.js"></script>
+    <!-- <?php echo $_SESSION["First_Name"] ?> -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/dashboardDataService.js"></script>
 </body>
 </html>

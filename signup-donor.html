@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<title>Covid Center - List Of Donors</title>
+<title>Covid Center - Register as Donor</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/style.css"> 
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="icon" href="assets/img/Covidcenter_logo.png"></head>
 <body>
-    <div class="main-wrapper">
+<div class="main-wrapper">
         <div class="header">
             <div class="header-left">
                 <a href="index.html" class="logo">
@@ -68,8 +68,8 @@
                             <li class="submenu">
                                 <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
                                 <ul style="display: none;">
-                                <li><a href="signup-donor.php"  id="submenu-a-flex"><span class="material-symbols-outlined">note_alt</span><span id="dropmenu-span-register">Register as donor</span></a></li>
-                                <li><a href="list-of-donor.php" class="active" id="submenu-a-flex"><span class="material-symbols-outlined">description</span><span id="dropmenu-span-register">List of donors</span></a></li>
+                                <li><a href="signup-donor.php" class="active" id="submenu-a-flex"><span class="material-symbols-outlined">note_alt</span><span id="dropmenu-span-register">Register as donor</span></a></li>
+                                <li><a href="list-of-donor.php"  id="submenu-a-flex"><span class="material-symbols-outlined">description</span><span id="dropmenu-span-register">List of donors</span></a></li>
                                 </ul>
                             </li>
                             <li>
@@ -88,13 +88,87 @@
                 </div>
             </div>
     </div>
-        <div class="page-wrapper">
-
+<div class="page-wrapper">
+    <div class="container-signup">
+        <div class="wrapper-sign-up">
+        <div class="welcome-back-img">
+            <h2 class="text-center" id="white-text">Welcome Back!</h2>
+            <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
+            <div class="signin-text">
+            <span class="span-sign-in">Already Registered as Donor?</span>
+            <button class="donor-signin-btn" value="Sign In">Sign In</button>
+        </div>
+        </div>
+     <div class="container-sign-up">
+    <h2 class="card-title text-center">Register</h2>
+      <form action="signup-process.php" method="post" >
+        <div class="form-gr1">
+			<div class="logo-name-signup">
+              <span class="material-symbols-outlined">person</span>
+              <input type="text" class="form-control" name="first_name" placeholder="First Name" required="required">
+			</div>        	
+            <div class="logo-name-signup">
+              <span class="material-symbols-outlined">person</span>
+              <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required">
+            </div>
+            <div class="logo-name-signup">
+                <span class="material-symbols-outlined">person</span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+              </div>    
+        </div>
+        <div class="logo-name-signup">
+            <span class="material-symbols-outlined">mail</span>
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="logo-name-signup">
+            <span class="material-symbols-outlined">lock</span>
+            <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+        </div>
+		<div class="login-create-btn">
+            <div class="rating">
+            <label for="blood-type">Blood Type:</label>
+            <select id="blood-type" name="blood-type">
+              <option value="volvo">A+</option>
+              <option value="saab">A-</option>
+              <option value="fiat">B+</option>
+              <option value="fiat">B-</option>
+              <option value="fiat">O+</option>
+              <option value="fiat">O-</option>
+              <option value="audi">AB+</option>
+              <option value="audi">AB-</option>
+            </select>
+        </div>
+        <div class="age-sign-in">
+            <span>Enter Your Age</span>
+            <input type="number" min="1" max="150" placeholder="Age">
+        </div>
+        <div class="sign-in-btn">
+            <button type="submit" name="save" class="btn-btn-sign-in">Register Now</button>
+        </div>
+      </div>
+    </form>
     </div>
-
+    </div>
+</div>
+</div>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
-<script src="assets/js/dashboardDataService.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@ new Chart("pie-chart", {
     plugins: {
         title: {
             display: true,
-            text: 'Covid 19 Symp'}}}
+            text: 'Covid 19 Symptoms'}}}
 });
 
 const options = {
@@ -66,7 +66,7 @@ const options = {
         plugins:{
         title: {
           display: true,
-          text: 'Covid 19 Symp'}},
+          text: 'Total Cases/Deaths per month in Lebanon'}},
         scales: {
          y1: {
            position: 'right'
@@ -131,7 +131,7 @@ const options = {
             plugins:{
             title: {
               display: true,
-              text: 'Covid 19 Symp'}},
+              text: 'Total Cases/Deaths per month worldwide'}},
             scales: {
              B: {
                position: 'right'
