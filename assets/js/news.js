@@ -1,11 +1,5 @@
 window.onload = function loadmore(){
-  readMore();
-
-$(function() {
-  $(".preload").fadeOut(2000, function() {
-      $(".news-wrapper").fadeIn(1000);
-  });
-});
+  readMore()
 }
 function readMore(){
        let y = 1;
@@ -15,7 +9,7 @@ function readMore(){
           [y] +
           "' id='card-title mb-0-" +
           [y] +
-          "'></h5></div><div class='card-body'><p class='card-text" +
+          "'></h5></div><div class='loader-wrapper'><div class='loader'></div></div><div class='card-body'><p class='card-text" +
           [y] +
           "' id='card-text" +
           [y] +
@@ -36,7 +30,11 @@ const options = {
     fetch("https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&media=True", options)
     .then((response) => response.json())
     .then((response) => {
-      for (y = 1 ; y <7 ; y++){
+      elements = document.getElementsByClassName("loader-wrapper");
+      for(q = 0; q<3 ;q++){
+      for (element of elements) {
+            element.remove();}}    
+     for (y = 1 ; y <7 ; y++){
         let title = document.getElementById("card-title mb-0-"+[y]+"");
         let text = document.getElementById("card-text" +[y] +"");
         let link = document.getElementById("link" +[y] +"");

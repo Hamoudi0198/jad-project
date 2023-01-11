@@ -26,49 +26,55 @@ for (let [key, value] of symp) {
       key +
       "</lable></li>"
   );
-
 }
 
-function submit (){
+
+const submit = () => {
   let proba = 0;
   $("input[type=checkbox]:checked").each(function () {
 proba += parseFloat(this.value);
   });
   $(".result-tab").append("<div class='result-container'><div class='result-btn'><button id='close-btn-result' onclick='closeResult()'><span class='material-symbols-outlined'>close</span></button></div><img src='' width='354px' height='250px' id='result-img'><div class='result-text-btn'><h2 id='result-txt' class='text-center'></h2><p id='result-mini-text' class='text-center'></p><p id='negative-text' class='text-center'></p><input type='button' onclick='retakeTest()' value='Retake Test'></div></div>");
   if (proba >= 70) {
-    document.getElementById("result-txt").innerHTML = "Positive Test";
-    document.getElementById("result-img").src = "assets/img/positive-covid.png";
-    document.getElementById("result-txt").style.color = "#e21111";
-    document.getElementById("result-mini-text").innerHTML = "Oh no! You Probably got covid";
+    covidPositive();
   } else {
-    document.getElementById("result-txt").innerHTML = "Negative Test";
-    document.getElementById("result-img").src = "assets/img/negative-covid.png";
-    document.getElementById("result-txt").style.color = "#37BC9B";
-    document.getElementById("result-mini-text").innerHTML = "Don't Panic you are safe";
+    covidNegative();
   }
   document.getElementById("rapid-test-submit").disabled = true;
   scrollDownToDiv();
 }
 
-function scrollUpToDiv(){
-  document.getElementById("rapid-test-container").scrollIntoView(true);
-}
-
-function closeResult() {
+const closeResult = () => {
   document.getElementById("rapid-test-submit").disabled = false;
   scrollUpToDiv()
   $(".result-container").remove();
 }
 
-function retakeTest() {
+const retakeTest = () => {
   $("#rapid-test-submit").disabled = false;
   $('input[type="checkbox"]:checked').prop("checked", false);
   scrollUpToDiv()
   closeResult();
 }
 
+const scrollUpToDiv = () => {
+  document.getElementById("rapid-test-container").scrollIntoView(true);
+}
 
-function scrollDownToDiv(){
+const scrollDownToDiv = () => {
   document.getElementById("result-tab").scrollIntoView(true);
 }
 
+const covidPositive = () => {
+  document.getElementById("result-txt").innerHTML = "Positive Test";
+  document.getElementById("result-img").src = "assets/img/positive-covid.png";
+  document.getElementById("result-txt").style.color = "#e21111";
+  document.getElementById("result-mini-text").innerHTML = "Oh no! You Probably got covid";
+}
+
+const covidNegative = () => {
+  document.getElementById("result-txt").innerHTML = "Negative Test";
+  document.getElementById("result-img").src = "assets/img/negative-covid.png";
+  document.getElementById("result-txt").style.color = "#37BC9B";
+  document.getElementById("result-mini-text").innerHTML = "Don't Panic you are safe";
+}

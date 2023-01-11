@@ -55,6 +55,10 @@ const getLebanonData = () =>{
   fetch('https://covid-193.p.rapidapi.com/statistics?country=Lebanon', options)
     .then(response => response.json())
     .then(response =>   {
+      for(q = 0; q<3 ;q++){
+        elements = document.getElementsByClassName("loader");
+         for (element of elements) {
+            element.remove();}}
       let dailyCases = document.getElementById("cases-current");
       let criticalCases = document.getElementById("cases-critical");
       let dailyDeathCases = document.getElementById("cases-death");
@@ -95,6 +99,9 @@ for (let h = 0; h < g.length; h++) {
     )
       .then((response) => response.json())
       .then((response) => {
+        elements = document.getElementsByClassName("wrapper-loader-white");
+         for (element of elements) {
+            element.remove();}
         let countryName = document.getElementById("country-"+[g[h]]+"")
         let dailyCases = document.getElementById("daily-cases-"+[g[h]]+"");
         let criticalCases = document.getElementById("critical-cases-"+[g[h]]+"");
@@ -120,8 +127,3 @@ for (let h = 0; h < g.length; h++) {
         Tdeaths.innerHTML = responseTotalDeaths;
   })
 }}
-
-  
-
-
-
