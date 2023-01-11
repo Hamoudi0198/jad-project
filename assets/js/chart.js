@@ -1,3 +1,11 @@
+$(function() {
+  $(".preload").fadeOut(2000, function() {
+      $(".chart-display-flex").fadeIn(1000);
+      document.getElementById("chart-wrapper").style.display= "block";
+  });
+});
+
+
 var xValues = ["Sore throat","Headache","Runny Nose","Blocked Nose ","Cough  ","Hoarse voice","Sneezing","Fatigue","Muscle pains/aches","Dizzy light-headed","Swollen neck glands","Eye soreness","Altered smell  ","Fever ","Shortness of breath","Earache ","Lost of smell",];
 var yValues = [13.25, 11.18, 9.13, 9.13, 9.13,8,7.30,6.16,5.70,4.12,3.45,3.19,2.96,2.51,2.51,2.28];
 var barColors = ["#376288","#437AA8","#5D91BD","#739EC2","#89ADCC","#A4D7CF","#86C8BE","#6DBDA5","#5BB584","#57B77D","#46A96D","#429A64","#459263","#40875C","#3D8359","#355979"];

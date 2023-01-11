@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["user"])) {
+   header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,24 +90,68 @@
 <div class="container-signup">
         <div class="wrapper-sign-in">
         <div class="welcome-back-img">
-            <h2 class="text-center" id="white-text">Welcome Back!</h2>
-            <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
+            <h2 class="text-center" id="white-text">Welcome!</h2>
+            <img src="assets/img/Sign up-rafiki.png" width="250px" height="250px">
             <div class="signin-text">
-            <span class="span-sign-in">Already Registered as Donor?</span>
-            <button class="donor-signin-btn" value="Sign In">Sign In</button>
+            <span class="span-sign-in">Already Have an account?</span>
+           <a href="login.php"><button class="donor-signin-btn" value="Sign In">Sign In</button></a>
         </div>
         </div>
      <div class="container-sign-up">
     <h2 class="card-title text-center">Register</h2>
-      <form action="signup-process.php" method="post" >
+    <?php
+        if (isset($_POST["save"])) {
+           $first = $_POST["first"];
+           $lastname = $_POST["last"];
+           $email = $_POST["email"];
+           $password = $_POST["pass"];
+           $passwordRepeat = $_POST["cpass"];          
+           $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+           $errors = array();
+           
+           if (strlen($password)<8) {
+            array_push($errors,"Password must be at least 8 charactes long");
+           }
+           if ($password!==$passwordRepeat) {
+            array_push($errors,"Password does not match");
+           }
+           require_once "database.php";
+           $sql = "SELECT * FROM users WHERE email = '$email'";
+           $result = mysqli_query($conn, $sql);
+           $rowCount = mysqli_num_rows($result);
+           if ($rowCount>0) {
+            array_push($errors,"Email already exists!");
+           }
+           if (count($errors)>0) {
+            foreach ($errors as  $error) {
+                echo "<div class='alert alert-danger'>$error</div>";
+            }
+           }else{
+            
+            $sql = "INSERT INTO users (first, last, email, password) VALUES ( ?, ?, ?, ? )";
+            $stmt = mysqli_stmt_init($conn);
+            $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+            if ($prepareStmt) {
+                mysqli_stmt_bind_param($stmt, "ssss", $first, $lastname, $email, $password);
+                mysqli_stmt_execute($stmt);
+                echo "<div class='alert alert-success'>You are registered successfully.</div>";
+            }else{
+                die("Something went wrong");
+            }
+           }
+          
+
+        }
+        ?>
+      <form action="signup.php" method="post" >
         <!-- <div class="form-gr1"> -->
 			<div class="logo-name-signup">
               <span class="material-symbols-outlined">person</span>
-              <input type="text" class="form-control" name="first_name" id="sign-up-input" placeholder="First Name" required="required">
+              <input type="text" class="form-control" name="first" id="sign-up-input" placeholder="First Name" required="required">
 			</div>        	
             <div class="logo-name-signup">
               <span class="material-symbols-outlined">person</span>
-              <input type="text" class="form-control" name="last_name" id="sign-up-input" placeholder="Last Name" required="required">
+              <input type="text" class="form-control" name="last" id="sign-up-input" placeholder="Last Name" required="required">
             </div>
         <!-- </div> -->
         <div class="logo-name-signup">
@@ -111,6 +161,10 @@
 		<div class="logo-name-signup">
             <span class="material-symbols-outlined">lock</span>
             <input type="password" class="form-control" name="pass" id="sign-up-input" placeholder="Password" required="required">
+        </div>
+        <div class="logo-name-signup">
+            <span class="material-symbols-outlined">lock</span>
+            <input type="password" class="form-control" name="cpass" id="sign-up-input" placeholder="Confirm Password" required="required">
         </div>
 		<div class="login-create-btn">
         <div class="sign-in-btn">

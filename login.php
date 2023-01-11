@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION["user"])) {
+   header("Location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,16 +99,38 @@ session_start();
 <div class="container-signup">
         <div class="wrapper-sign-in">
         <div class="welcome-back-img">
-            <h2 class="text-center" id="white-text">Welcome!</h2>
-            <img src="assets/img/Sign up-rafiki.png" width="250px" height="250px">
+            <h2 class="text-center" id="white-text">Welcome Back!</h2>
+            <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
             <div class="signin-text">
             <span class="span-sign-in">Don't Have an account?</span>
-            <button class="donor-signin-btn" value="Sign In">Sign up</button>
+            <a href="signup.php"><button class="donor-signin-btn" value="Sign In">Sign up</button></a>
         </div>
         </div>
      <div class="container-sign-up">
-    <h2 class="card-title text-center">Login in</h2>
-      <form action="signup-process.php" method="post" >
+    <h2 class="card-title text-center">Login</h2>
+    <?php
+        if (isset($_POST["save"])) {
+           $email = $_POST["email"];
+           $password = $_POST["pass"];
+            require_once "database.php";
+            $sql = "SELECT * FROM users WHERE email = '$email'";
+            $result = mysqli_query($conn, $sql);
+            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if ($user) {
+                if (password_verify($password, $user["password"])) {
+                    session_start();
+                    $_SESSION["user"] = "yes";
+                    header("Location: index.php");
+                    die();
+                }else{
+                    echo "<div class='alert alert-danger'>Password does not match</div>";
+                }
+            }else{
+                echo "<div class='alert alert-danger'>Email does not match</div>";
+            }
+        }
+        ?>
+      <form action="login.php" method="post" >
         <div class="logo-name-signup">
             <span class="material-symbols-outlined">mail</span>
         	<input type="email" class="form-control" name="email" id="sign-up-input" placeholder="Email" required="required">
@@ -116,7 +141,7 @@ session_start();
         </div>
 		<div class="login-create-btn">
         <div class="sign-in-btn">
-            <button type="submit" name="save" class="btn-btn-sign-in">Login in</button>
+            <button type="submit" name="save" class="btn-btn-sign-in">Login</button>
         </div>
       </div>
     </form>

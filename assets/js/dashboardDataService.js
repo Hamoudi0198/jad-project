@@ -6,15 +6,7 @@ var y = [
   "-bg-primary-recovery",
   " bg-danger",
 ];
-
-var w = [
-  "current-cases",
-  "critical-cases",
-  "death-cases",
-  "total-cases",
-  "recovered-cases",
-  "total-death-cases",
-];
+var w = ["current", "critical", "death", "total", "recovered", "total-death"];
 var i = [
   "Daily Cases (lebanon/daily)",
   "Critical Cases (lebanon/daily)",
@@ -31,6 +23,8 @@ var j = [
   " fa-notes-medical",
   " fa-triangle-exclamation",
 ];
+let g = ["Usa", "India", "Spain", "China", "Brazil"];
+  
 window.onload = function append() {
   for (var h = 0; h < 6; h++) {
     $(".row").append(
@@ -40,170 +34,94 @@ window.onload = function append() {
         j[h] +
         "'></i></span><div class='dash-count'><p class='count-title'>" +
         i[h] +
-        "</p><p id=" +
+        "</p><p id='cases-" +
         w[h] +
-        " class='count'></p></div></div></div></div></div>"
+        "' class='count'><div class='loader'></div></p></div></div></div></div></div>"
     );
-  }
-};
+  };
+  getCountriesData();
+  getLebanonData();
+}
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "ffa1e90d65mshc8214b7621f02cep1827bcjsnde0aed321ec5",
-    "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
-  },
-};
+const getLebanonData = () =>{
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'ffa1e90d65mshc8214b7621f02cep1827bcjsnde0aed321ec5',
+      'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+    }
+  };
+  
+  fetch('https://covid-193.p.rapidapi.com/statistics?country=Lebanon', options)
+    .then(response => response.json())
+    .then(response =>   {
+      let dailyCases = document.getElementById("cases-current");
+      let criticalCases = document.getElementById("cases-critical");
+      let dailyDeathCases = document.getElementById("cases-death");
+      let totalCases = document.getElementById("cases-total");
+      let recoveredCases = document.getElementById("cases-recovered");
+      let deathTotalCases = document.getElementById("cases-total-death");
 
-fetch("https://covid-193.p.rapidapi.com/statistics?country=lebanon", options)
-  .then((response) => response.json())
-  .then((response) => {
-    console.log(response);
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoveryCases = response.response[0].cases.recovered ?? 0;
-    let totalCases = response.response[0].cases.total ?? 0;
-    let totalDeathCases = response.response[0].deaths.total ?? 0;
+      let responseDailyCases = response.response[0].cases.new ?? 0;
+      let responseCriticalCases = response.response[0].cases.critical ?? 0;
+      let responseDeathCases = response.response[0].deaths.new ?? 0;
+      let responseTotalCases = response.response[0].cases.total ?? 0;
+      let responseRecoveryCases = response.response[0].cases.recovered ?? 0;
+      let totalDeathCases = response.response[0].deaths.total ?? 0;
 
-    let daily = document.getElementById("current-cases");
-    let critical = document.getElementById("critical-cases");
-    let recovered = document.getElementById("recovered-cases");
-    let deathtotal = document.getElementById("total-death-cases");
-    let death = document.getElementById("death-cases");
-    let total = document.getElementById("total-cases");
+      dailyCases.innerHTML = responseDailyCases;
+      criticalCases.innerHTML = responseCriticalCases;
+      dailyDeathCases.innerHTML = responseDeathCases;
+      totalCases.innerHTML = responseTotalCases;
+      recoveredCases.innerHTML = responseRecoveryCases;
+      deathTotalCases.innerHTML = totalDeathCases;
+  })
+}
 
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    total.innerHTML = totalCases;
-    deathtotal.innerHTML = totalDeathCases;
-    recovered.innerHTML = recoveryCases;
-  });
 
-fetch("https://covid-193.p.rapidapi.com/statistics?country=Usa", options)
-  .then((response) => response.json())
-  .then((response) => {
-    console.log(response);
+const getCountriesData = () => {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'ffa1e90d65mshc8214b7621f02cep1827bcjsnde0aed321ec5',
+      'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+    }
+  };
+  
+for (let h = 0; h < g.length; h++) {
+    fetch(
+      "https://covid-193.p.rapidapi.com/statistics?country=" + [g[h]] + "",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        let countryName = document.getElementById("country-"+[g[h]]+"")
+        let dailyCases = document.getElementById("daily-cases-"+[g[h]]+"");
+        let criticalCases = document.getElementById("critical-cases-"+[g[h]]+"");
+        let deaths = document.getElementById("death-"+[g[h]]+"");
+        let recovery = document.getElementById("recovery-cases-"+[g[h]]+"");
+        let Tcases = document.getElementById("total-cases-"+[g[h]]+"");
+        let Tdeaths = document.getElementById("total-deaths-"+[g[h]]+"");
 
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoverycases = response.response[0].cases.recovered ?? 0;
-    let totalcases = response.response[0].cases.total ?? 0;
-    let totaldeaths = response.response[0].deaths.total ?? 0;
+        let responseCountryName = response.response[0].country;
+        let responseDailyCases = response.response[0].cases.new ??0;
+        let responseCriticalCases = response.response[0].cases.critical ??0;
+        let responseDeathsCases = response.response[0].deaths.new ??0;
+        let responseRecoveryCases = response.response[0].cases.recovered ??0;
+        let responseTotalCases = response.response[0].cases.total ??0;
+        let responseTotalDeaths = response.response[0].deaths.total ??0;
 
-    let daily = document.getElementById("daily-cases-us");
-    let critical = document.getElementById("critical-cases-us");
-    let death = document.getElementById("death-us");
-    let recovery = document.getElementById("recovery-cases-us");
-    let total = document.getElementById("total-cases-us");
-    let totald = document.getElementById("total-deaths-us");
+        countryName.innerHTML = responseCountryName;
+        dailyCases.innerHTML = responseDailyCases;
+        criticalCases.innerHTML = responseCriticalCases;
+        deaths.innerHTML = responseDeathsCases;
+        recovery.innerHTML = responseRecoveryCases;
+        Tcases.innerHTML = responseTotalCases;
+        Tdeaths.innerHTML = responseTotalDeaths;
+  })
+}}
 
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    recovery.innerHTML = recoverycases;
-    total.innerHTML = totalcases;
-    totald.innerHTML = totaldeaths;
-  });
+  
 
-fetch("https://covid-193.p.rapidapi.com/statistics?country=India", options)
-  .then((response) => response.json())
-  .then((response) => {
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoverycases = response.response[0].cases.recovered ?? 0;
-    let totalcases = response.response[0].cases.total ?? 0;
-    let totaldeaths = response.response[0].deaths.total ?? 0;
 
-    let daily = document.getElementById("daily-cases-in");
-    let critical = document.getElementById("critical-cases-in");
-    let death = document.getElementById("death-in");
-    let recovery = document.getElementById("recovery-cases-in");
-    let total = document.getElementById("total-cases-in");
-    let totald = document.getElementById("total-deaths-in");
 
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    recovery.innerHTML = recoverycases;
-    total.innerHTML = totalcases;
-    totald.innerHTML = totaldeaths;
-  });
-
-fetch("https://covid-193.p.rapidapi.com/statistics?country=Spain", options)
-  .then((response) => response.json())
-  .then((response) => {
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoverycases = response.response[0].cases.recovered ?? 0;
-    let totalcases = response.response[0].cases.total ?? 0;
-    let totaldeaths = response.response[0].deaths.total ?? 0;
-
-    let daily = document.getElementById("daily-cases-sp");
-    let critical = document.getElementById("critical-cases-sp");
-    let death = document.getElementById("death-sp");
-    let recovery = document.getElementById("recovery-cases-sp");
-    let total = document.getElementById("total-cases-sp");
-    let totald = document.getElementById("total-deaths-sp");
-
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    recovery.innerHTML = recoverycases;
-    total.innerHTML = totalcases;
-    totald.innerHTML = totaldeaths;
-  });
-
-fetch("https://covid-193.p.rapidapi.com/statistics?country=China", options)
-  .then((response) => response.json())
-  .then((response) => {
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoverycases = response.response[0].cases.recovered ?? 0;
-    let totalcases = response.response[0].cases.total ?? 0;
-    let totaldeaths = response.response[0].deaths.total ?? 0;
-
-    let daily = document.getElementById("daily-cases-ch");
-    let critical = document.getElementById("critical-cases-ch");
-    let death = document.getElementById("death-ch");
-    let recovery = document.getElementById("recovery-cases-ch");
-    let total = document.getElementById("total-cases-ch");
-    let totald = document.getElementById("total-deaths-ch");
-
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    recovery.innerHTML = recoverycases;
-    total.innerHTML = totalcases;
-    totald.innerHTML = totaldeaths;
-  });
-
-fetch("https://covid-193.p.rapidapi.com/statistics?country=brazil", options)
-  .then((response) => response.json())
-  .then((response) => {
-    let dailyCases = response.response[0].cases.new ?? 0;
-    let criticalCases = response.response[0].cases.critical ?? 0;
-    let deathCases = response.response[0].deaths.new ?? 0;
-    let recoverycases = response.response[0].cases.recovered ?? 0;
-    let totalcases = response.response[0].cases.total ?? 0;
-    let totaldeaths = response.response[0].deaths.total ?? 0;
-
-    let daily = document.getElementById("daily-cases-br");
-    let critical = document.getElementById("critical-cases-br");
-    let death = document.getElementById("death-br");
-    let recovery = document.getElementById("recovery-cases-br");
-    let total = document.getElementById("total-cases-br");
-    let totald = document.getElementById("total-deaths-br");
-
-    daily.innerHTML = dailyCases;
-    critical.innerHTML = criticalCases;
-    death.innerHTML = deathCases;
-    recovery.innerHTML = recoverycases;
-    total.innerHTML = totalcases;
-    totald.innerHTML = totaldeaths;
-  });
