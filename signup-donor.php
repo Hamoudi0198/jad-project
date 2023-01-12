@@ -14,8 +14,6 @@
   <div class="main-wrapper login-body">
     <div class="login-wrapper">
     <div class="container">
-    <div class="loginbox">
-    <div class="login-right">
       <div class="container-signup">
         <div class="wrapper-sign-up">
         <div class="welcome-back-img">
@@ -28,7 +26,57 @@
         </div>
      <div class="container-sign-up">
     <h2 class="card-title text-center">Register</h2>
-      <form action="signup-process.php" method="post" >
+    <?php
+    if (isset($_POST["save"])) {
+      $first = $_POST["first_name"];
+      $lastname = $_POST["last_name"];
+      $username = $_POST["username"];
+      $email = $_POST["email"];
+      $password = $_POST["pass"];
+      $bloodtype = $_POST["blood-type"];
+      $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+      $age = $_POST["age"];
+      $errors = array();
+      if (strlen($password) < 8) {
+        array_push($errors, "Password must be at least 8 charactes long");
+      }
+      require_once "donorDatabase.php";
+      $sql = "SELECT * FROM user WHERE email = '$email'";
+      $result = mysqli_query($conn, $sql);
+      $rowCount = mysqli_num_rows($result);
+      if ($rowCount > 0) {
+        array_push($errors, "Email already exists!");
+      }
+      $msql = "SELECT * FROM user WHERE username = '$username'";
+      $result1 = mysqli_query($conn, $msql);
+      $rowcount = mysqli_num_rows($result1);
+      if ($rowcount > 0) {
+        array_push($errors, "Username already exists!");
+      }
+
+
+      // 7ot age condition eno akbar men 18 
+    
+      
+      if (count($errors) > 0) {
+        foreach ($errors as $error) {
+          echo "<div class='alert alert-danger'>$error</div>";
+        }
+      } else {
+        $sql = "INSERT INTO user (first, last, username, email, password, bloodtype, age) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_stmt_init($conn);
+        $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+        if ($prepareStmt) {
+          mysqli_stmt_bind_param($stmt, "sssssss", $first, $lastname, $username, $email, $passwordHash, $bloodtype, $age);
+          mysqli_stmt_execute($stmt);
+          echo "<div class='alert alert-success'>You are registered successfully.</div>";
+        } else {
+          die("Something went wrong");
+        }
+      }
+    }
+    ?>
+      <form action="signup-donor.php" method="post">
         <div class="form-gr1">
       <div class="logo-name-signup">
               <span class="material-symbols-outlined">person</span>
@@ -54,7 +102,8 @@
     <div class="login-create-btn">
             <div class="rating">
             <label for="blood-type">Blood Type:</label>
-            <select id="blood-type" name="blood-type">
+            <input type="date" >
+            <!-- <select id="blood-type" name="blood-type" required="required">
               <option value="volvo">A+</option>
               <option value="saab">A-</option>
               <option value="fiat">B+</option>
@@ -63,11 +112,11 @@
               <option value="fiat">O-</option>
               <option value="audi">AB+</option>
               <option value="audi">AB-</option>
-            </select>
+            </select> -->
         </div>
         <div class="age-sign-in">
             <span>Enter Your Age</span>
-            <input type="number" min="1" max="150" placeholder="Age">
+            <input type="number" min="1" max="150" name="age" placeholder="Age" required="required">
         </div>
         <div class="sign-in-btn">
             <button type="submit" name="save" class="btn-btn-sign-in">Register Now</button>
@@ -77,7 +126,6 @@
     </div>
     </div>
 </div>
-    </div>
     </div>
     </div>
     </div>
