@@ -5030,22 +5030,19 @@ label {
     background: #37BC9B;
     border-left: 1px solid #37BC9B;
     padding: 2em;
-    border-radius: 20px
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-/* .welcome-back-img-signup{
-    height: 86.9%;
-    background: #37BC9B;
-    border-left: 1px solid #37BC9B;
-    padding: 2em;
-    border-radius: 20px
 
-} */
 
 #sign-up-input{
     width: 100%;
     border-radius: 5px;
-    /* border: 1px solid; */
 }
+
 .span-sign-in{
     display: flex;
     justify-content: center;
@@ -5078,7 +5075,7 @@ label {
     margin-top: 10px;
     gap: 57px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -5189,3 +5186,6 @@ align-items: center;
         vertical-align:middle;
     }
     
+    #date-width{
+        width: 171px;
+    }

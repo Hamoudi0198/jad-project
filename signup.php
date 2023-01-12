@@ -18,75 +18,9 @@ if (isset($_SESSION["user"])) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-<div class="main-wrapper">
-        <div class="header">
-            <div class="header-left">
-                <a href="index.html" class="logo">
-                    <img src="assets/img/Covidcenter2.png" style="max-height: 60px;width: 149px;" alt="Logo">
-                </a>
-                <a href="index.html" class="logo logo-small">
-                    <img src="assets/img/Covidcenter_logo.png" id="mini-logo" width="30" height="30">
-                </a>
-            </div>
-            <a href="javascript:void(0);" id="toggle_btn">
-                <span class="material-symbols-outlined" id="material-symbols-outlined-menu">menu</span></a>       
-                <a class="mobile_btn" id="mobile_btn">
-                <i class="fa fa-bars"></i>
-                </a>
-                <ul class="nav user-menu">  
-                    <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
-                    <span class="user-img"><p id="account-name"></p></span>
-                    </a>
-                    <div class="dropdown-menu">
-                    <div class="user-text">
-                    <h6>Seema Sisty</h6>
-                    <a class="dropdown-item" href="profileSetting.html">My profile</a>
-                    <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
-                    </div>
-                    </li>
-                    </ul>
-            <div class="sidebar" id="sidebar">
-                <div class="sidebar-inner slimscroll">
-                    <div id="sidebar-menu" class="sidebar-menu">
-                        <ul class="sidebar-ul1">
-                            <li class="menu-title">
-                            </li>
-                            <li>
-                                <a href="index.html"><span class="material-symbols-outlined" id="sidebar-icon">home</span><span>Dashboard</span></a>
-                            </li>   
-                            <li>
-                                <a href="chart.html"><span class="material-symbols-outlined" id="sidebar-icon">analytics</span><span>Chart</span></a>
-                            </li>
-                            <li>
-                                <a href="rapid test.html"><span class="material-symbols-outlined" id="sidebar-icon">labs</span><span>Rapid Test</span></a>
-                            </li>
-                            <li class="submenu">
-                                <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
-                                <ul style="display: none;">
-                                <li><a href="signup-donor.html" id="submenu-a-flex"><span class="material-symbols-outlined">note_alt</span><span id="dropmenu-span-register">Register as donor</span></a></li>
-                                <li><a href="list-of-donor.php" id="submenu-a-flex"><span class="material-symbols-outlined">description</span><span id="dropmenu-span-register">List of donors</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="hospital.html"><span class="material-symbols-outlined" id="sidebar-icon">home_health</span><span>Hospital</span></a>
-                            </li>
-                            <li>
-                                <a href="news.html"><span class="material-symbols-outlined" id="sidebar-icon">newspaper</span><span>News</span></a>
-                            </li>
-                            <li>
-                                <a href="profileSetting.html"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>Settings</span></a>
-                            </li>
-                        </ul>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    </div>
-<div class="page-wrapper">
+<div class="main-wrapper login-body">
+    <div class="login-wrapper">
+    <div class="container">
 <div class="container-signup">
         <div class="wrapper-sign-in">
         <div class="welcome-back-img">
@@ -99,20 +33,20 @@ if (isset($_SESSION["user"])) {
         </div>
      <div class="container-sign-up">
     <h2 class="card-title text-center">Register</h2>
+
     <?php
         if (isset($_POST["save"])) {
            $first = $_POST["first"];
            $lastname = $_POST["last"];
            $email = $_POST["email"];
-           $password = $_POST["pass"];
-           $passwordRepeat = $_POST["cpass"];          
-           $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+           $pass = $_POST["pass"];
+           $passwordRepeat = $_POST["cpass"];
            $errors = array();
            
-           if (strlen($password)<8) {
+           if (strlen($pass)<8) {
             array_push($errors,"Password must be at least 8 charactes long");
            }
-           if ($password!==$passwordRepeat) {
+           if ($pass!==$passwordRepeat) {
             array_push($errors,"Password does not match");
            }
            require_once "database.php";
@@ -127,24 +61,23 @@ if (isset($_SESSION["user"])) {
                 echo "<div class='alert alert-danger'>$error</div>";
             }
            }else{
-            
-            $sql = "INSERT INTO users (first, last, email, password) VALUES ( ?, ?, ?, ? )";
-            $stmt = mysqli_stmt_init($conn);
-            $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
-            if ($prepareStmt) {
-                mysqli_stmt_bind_param($stmt, "ssss", $first, $lastname, $email, $password);
-                mysqli_stmt_execute($stmt);
-                echo "<div class='alert alert-success'>You are registered successfully.</div>";
-            }else{
-                die("Something went wrong");
-            }
+            $query="INSERT INTO users (first, last, email, password ) VALUES ('$first', '$lastname', '$email', 'md5($pass)')";   
+            $sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
+        header ("Location: login.php?status=success");   
+            // $stmt = mysqli_stmt_init($conn);
+            // $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+            // if ($prepareStmt) {
+            //     mysqli_stmt_bind_param($stmt, "ssss", $first, $lastname, $email, $pass);
+            //     mysqli_stmt_execute($stmt);
+            //     echo "<div class='alert alert-success'>You are registered successfully.</div>";
+            // }else{
+            //     die("Something went wrong");
+            // }
            }
-          
-
         }
         ?>
-      <form action="signup.php" method="post" >
-        <!-- <div class="form-gr1"> -->
+
+<form action="signup.php" method="post" >
 			<div class="logo-name-signup">
               <span class="material-symbols-outlined">person</span>
               <input type="text" class="form-control" name="first" id="sign-up-input" placeholder="First Name" required="required">
@@ -153,7 +86,6 @@ if (isset($_SESSION["user"])) {
               <span class="material-symbols-outlined">person</span>
               <input type="text" class="form-control" name="last" id="sign-up-input" placeholder="Last Name" required="required">
             </div>
-        <!-- </div> -->
         <div class="logo-name-signup">
             <span class="material-symbols-outlined">mail</span>
         	<input type="email" class="form-control" name="email" id="sign-up-input" placeholder="Email" required="required">
@@ -178,6 +110,7 @@ if (isset($_SESSION["user"])) {
  </div>
 </div>
 </div>
+
 </body>
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

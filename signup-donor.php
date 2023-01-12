@@ -53,11 +53,12 @@
       if ($rowcount > 0) {
         array_push($errors, "Username already exists!");
       }
-
-
-      // 7ot age condition eno akbar men 18 
-    
-      
+      $age = $_POST["age"];
+      if ($age > 18) {
+      echo "";
+      } else {
+        array_push($errors, "User should be atleast 18!");
+      }
       if (count($errors) > 0) {
         foreach ($errors as $error) {
           echo "<div class='alert alert-danger'>$error</div>";
@@ -102,17 +103,16 @@
     <div class="login-create-btn">
             <div class="rating">
             <label for="blood-type">Blood Type:</label>
-            <input type="date" >
-            <!-- <select id="blood-type" name="blood-type" required="required">
-              <option value="volvo">A+</option>
-              <option value="saab">A-</option>
-              <option value="fiat">B+</option>
-              <option value="fiat">B-</option>
-              <option value="fiat">O+</option>
-              <option value="fiat">O-</option>
-              <option value="audi">AB+</option>
-              <option value="audi">AB-</option>
-            </select> -->
+            <select id="blood-type" name="blood-type" required="required">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="0-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
         </div>
         <div class="age-sign-in">
             <span>Enter Your Age</span>

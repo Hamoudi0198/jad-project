@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["user"])) {
-   header("Location: index.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +13,34 @@ if (isset($_SESSION["user"])) {
 </head>
 <body>
 <div class="main-wrapper login-body">
-          <div class="login-wrapper">
+        <div class="login-wrapper">
           <div class="container">
             <div class="container-signup">
               <div class="wrapper-sign-in">
               <div class="welcome-back-img">
                   <h2 class="text-center" id="white-text">Welcome Back!</h2>
+                  <?php
+session_start();
+if(isset($_POST['save']))
+{
+    extract($_POST);
+    include 'database.php';
+    $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='md5($pass)'");
+    $row  = mysqli_fetch_array($sql);
+    if(is_array($row))
+    {
+        $_SESSION["id"] = $row['id'];
+        $_SESSION["email"] = $row['email'];
+        $_SESSION["first"] = $row['first'];
+        $_SESSION["last"] = $row['last']; 
+        header("Location: index.html"); 
+    }
+    else
+    {
+        echo "Invalid Email ID/Password";
+    }
+}
+?>
                   <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
                   <div class="signin-text">
                   <span class="span-sign-in">Don't Have an account?</span>
@@ -33,28 +49,7 @@ if (isset($_SESSION["user"])) {
               </div>
            <div class="container-sign-up">
           <h2 class="card-title text-center">Login</h2>
-          <?php
-              if (isset($_POST["save"])) {
-                 $email = $_POST["email"];
-                 $password = $_POST["pass"];
-                  require_once "database.php";
-                  $sql = "SELECT * FROM users WHERE email = '$email'";
-                  $result = mysqli_query($conn, $sql);
-                  $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                  if ($user) {
-                      if (password_verify($password, $user["password"])) {
-                          session_start();
-                          $_SESSION["user"] = "yes";
-                          header("Location: index.php");
-                          die();
-                      }else{
-                          echo "<div class='alert alert-danger'>Password does not match</div>";
-                      }
-                  }else{
-                      echo "<div class='alert alert-danger'>Email does not match</div>";
-                  }
-              }
-              ?>
+     
             <form action="login.php" method="post" >
               <div class="logo-name-signup">
                   <span class="material-symbols-outlined">mail</span>
