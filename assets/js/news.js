@@ -30,6 +30,7 @@ const options = {
     fetch("https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&media=True", options)
     .then((response) => response.json())
     .then((response) => {
+      console.log(response)
       elements = document.getElementsByClassName("loader-wrapper");
       for(q = 0; q<3 ;q++){
       for (element of elements) {

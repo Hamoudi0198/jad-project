@@ -22,18 +22,18 @@
                   <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
                   <div class="signin-text">
                   <span class="span-sign-in">Don't Have an account?</span>
-                  <a href="signup.php"><button class="donor-signin-btn" value="Sign In">Sign up</button></a>
+                  <a href="signup-donor.php"><button class="donor-signin-btn" value="Sign In">Sign up</button></a>
               </div>
               </div>
            <div class="container-sign-up">
-          <h2 class="card-title text-center">account Login</h2>
+          <h2 class="card-title text-center">Login</h2>
           <?php
 session_start();
 if(isset($_POST['save']))
 {
     extract($_POST);
-    include 'database.php';
-    $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='md5($pass)'");
+    include 'donorDatabase.php';
+    $sql=mysqli_query($conn,"SELECT * FROM user where email='$email' and password='md5($pass)'");
     $row  = mysqli_fetch_array($sql);
     if(is_array($row))
     {
@@ -41,15 +41,15 @@ if(isset($_POST['save']))
         $_SESSION["email"] = $row['email'];
         $_SESSION["first"] = $row['first'];
         $_SESSION["last"] = $row['last']; 
-        header("Location: index.html"); 
-    }
+        header("Location: list-of-donor.html"); 
+      }
     else
     {
         echo "Invalid Email ID/Password";
     }
 }
 ?>
-            <form action="login.php" method="post" >
+            <form action="signin-donor.php" method="post" >
               <div class="logo-name-signup">
                   <span class="material-symbols-outlined">mail</span>
                 <input type="email" class="form-control" name="email" id="sign-up-input" placeholder="Email" required="required">

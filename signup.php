@@ -63,16 +63,7 @@ if (isset($_SESSION["user"])) {
            }else{
             $query="INSERT INTO users (first, last, email, password ) VALUES ('$first', '$lastname', '$email', 'md5($pass)')";   
             $sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
-        header ("Location: login.php?status=success");   
-            // $stmt = mysqli_stmt_init($conn);
-            // $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
-            // if ($prepareStmt) {
-            //     mysqli_stmt_bind_param($stmt, "ssss", $first, $lastname, $email, $pass);
-            //     mysqli_stmt_execute($stmt);
-            //     echo "<div class='alert alert-success'>You are registered successfully.</div>";
-            // }else{
-            //     die("Something went wrong");
-            // }
+            header ("Location: login.php?status=success");   
            }
         }
         ?>

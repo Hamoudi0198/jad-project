@@ -21,7 +21,7 @@
             <img src="assets/img/Login-amico (2).png" width="250px" height="250px">
             <div class="signin-text">
             <span class="span-sign-in">Already Registered as Donor?</span>
-            <button class="donor-signin-btn" value="Sign In">Sign In</button>
+           <a href="signin-donor.php"><button class="donor-signin-btn" value="Sign In">Sign In</button></a>
         </div>
         </div>
      <div class="container-sign-up">
@@ -32,12 +32,11 @@
       $lastname = $_POST["last_name"];
       $username = $_POST["username"];
       $email = $_POST["email"];
-      $password = $_POST["pass"];
+      $pass = $_POST["pass"];
       $bloodtype = $_POST["blood-type"];
-      $passwordHash = password_hash($password, PASSWORD_DEFAULT);
       $age = $_POST["age"];
       $errors = array();
-      if (strlen($password) < 8) {
+      if (strlen($pass) < 8) {
         array_push($errors, "Password must be at least 8 charactes long");
       }
       require_once "donorDatabase.php";
@@ -64,16 +63,9 @@
           echo "<div class='alert alert-danger'>$error</div>";
         }
       } else {
-        $sql = "INSERT INTO user (first, last, username, email, password, bloodtype, age) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_stmt_init($conn);
-        $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
-        if ($prepareStmt) {
-          mysqli_stmt_bind_param($stmt, "sssssss", $first, $lastname, $username, $email, $passwordHash, $bloodtype, $age);
-          mysqli_stmt_execute($stmt);
-          echo "<div class='alert alert-success'>You are registered successfully.</div>";
-        } else {
-          die("Something went wrong");
-        }
+        $query = "INSERT INTO user (first, last, username, email, password, bloodtype, age)  VALUES ('$first', '$lastname','$username', '$email', 'md5($pass)','$bloodtype','$age')";
+        $sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
+        header ("Location: signin-donor.php?status=success");   
       }
     }
     ?>
