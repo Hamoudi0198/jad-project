@@ -41,11 +41,11 @@ if(isset($_POST['save']))
         $_SESSION["email"] = $row['email'];
         $_SESSION["first"] = $row['first'];
         $_SESSION["last"] = $row['last']; 
-        header("Location: index.html"); 
+        header("Location: index.php"); 
     }
     else
     {
-        echo "Invalid Email ID/Password";
+        echo "<div class='alert alert-danger'>Invalid Email ID/Password</div>";
     }
 }
 ?>

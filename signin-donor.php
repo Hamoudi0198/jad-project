@@ -41,7 +41,7 @@ if(isset($_POST['save']))
         $_SESSION["email"] = $row['email'];
         $_SESSION["first"] = $row['first'];
         $_SESSION["last"] = $row['last']; 
-        header("Location: list-of-donor.html"); 
+        header("Location: list-of-donor.php"); 
       }
     else
     {

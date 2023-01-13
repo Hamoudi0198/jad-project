@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'database.php';
+$id= $_SESSION["id"];
+$sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
+$row  = mysqli_fetch_array($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +21,10 @@
 <div class="main-wrapper">
     <div class="header">
         <div class="header-left">
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <img src="assets/img/Covidcenter2.png" style="max-height: 60px;width: 149px;" alt="Logo">
             </a>
-            <a href="index.html" class="logo logo-small">
+            <a href="index.php" class="logo logo-small">
                 <img src="assets/img/Covidcenter_logo.png" id="mini-logo" width="30" height="30">
             </a>
         </div>
@@ -36,13 +43,13 @@
                 <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
-                <span class="user-img"><p id="account-name">name</p></span>
+                <span class="user-img"><p id="account-name"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></p></span>
                 </a>
                 <div class="dropdown-menu">
                 <div class="user-text">
-                <h6>Seema Sisty</h6>
-                <a class="dropdown-item" href="profileSetting.html">My profile</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?><</h6>
+                <a class="dropdown-item" href="profileSetting.php">My profile</a>
+                <a class="dropdown-item" href="login.php">Logout</a>
                 </div>
                 </div>
                 </li>
@@ -57,29 +64,29 @@
                         <li class="menu-title">
                         </li>
                         <li>
-                            <a href="index.html"><span class="material-symbols-outlined" id="sidebar-icon">home</span><span>Dashboard</span></a>
+                            <a href="index.php"><span class="material-symbols-outlined" id="sidebar-icon">home</span><span>Dashboard</span></a>
                         </li>   
                         <li class="active">
-                            <a href="chart.html"><span class="material-symbols-outlined" id="sidebar-icon">analytics</span><span>Charts</span></a>
+                            <a href="chart.php"><span class="material-symbols-outlined" id="sidebar-icon">analytics</span><span>Charts</span></a>
                         </li>
                         <li>
-                            <a href="rapid test.html"><span class="material-symbols-outlined" id="sidebar-icon">labs</span><span>Rapid Test</span></a>
+                            <a href="rapid test.php"><span class="material-symbols-outlined" id="sidebar-icon">labs</span><span>Rapid Test</span></a>
                         </li>
                         <li class="submenu">
                             <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
                             <ul style="display: none;">
                             <li><a href="signup-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Register</span></a></li>
-                            <li><a href="list-of-donor.html" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
+                            <li><a href="list-of-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
                             </ul>
                             </li>
                         <li>
-                            <a href="hospital.html"><span class="material-symbols-outlined" id="sidebar-icon">home_health</span><span>Hospitals</span></a>
+                            <a href="hospital.php"><span class="material-symbols-outlined" id="sidebar-icon">home_health</span><span>Hospitals</span></a>
                         </li>
                         <li>
-                            <a href="news.html"><span class="material-symbols-outlined" id="sidebar-icon">newspaper</span><span>News</span></a>
+                            <a href="news.php"><span class="material-symbols-outlined" id="sidebar-icon">newspaper</span><span>News</span></a>
                         </li>
                         <!-- <li>
-                            <a href="profileSetting.html"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>Settings</span></a>
+                            <a href="profileSetting.php"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>Settings</span></a>
                         </li> -->
                     </ul>
                     </li>
