@@ -1590,7 +1590,8 @@ a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:h
     display: flex;
     align-items: center;
     border-top: 1px solid #e3e3e3;
-    padding: 10px 15px
+    padding: 10px 15px;
+    justify-content: center;
 }
 
 .user-menu .dropdown-menu .dropdown-item:hover {
@@ -1889,7 +1890,7 @@ html.menu-opened body {
     color: white
 }
 
-.sidebar-menu ul ul a.active:hover{
+.sidebar-menu ul ul a.active:hover {
     background-color: rgb(33, 136, 80);
 }
 
@@ -4289,8 +4290,8 @@ table .actions .btn {
     }
 
     .mobile_btn {
-        display: flex; 
-        align-items: center;  
+        display: flex;
+        align-items: center;
         color: #37BC9B !important;
         cursor: pointer;
         font-size: 24px;
@@ -4949,12 +4950,17 @@ label {
     height: 60px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 .result-tab {
     display: flex;
@@ -4979,28 +4985,29 @@ label {
     margin: 10px;
 }
 
-.container-signup{
+.container-signup {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
 }
 
-.container-sign-up{
+.container-sign-up {
     padding: 2em;
 }
 
-.wrapper-sign-up{
-   display: flex;
-   gap: 30px;
-   background-color: white;
-   flex-wrap: nowrap;
-   justify-content: center;
-   border: 1px solid;
-   align-items: center;
-   border-radius: 20px;
+.wrapper-sign-up {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border: 1px solid;
+    align-items: center;
+    border-radius: 20px;
 }
-.wrapper-sign-in{
+
+.wrapper-sign-in {
     display: flex;
     background-color: white;
     gap: 30px;
@@ -5009,10 +5016,10 @@ label {
     border: 1px solid;
     align-items: center;
     border-radius: 20px;
- 
- }
 
-.logo-name-signup{
+}
+
+.logo-name-signup {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -5020,12 +5027,12 @@ label {
     border-radius: 4px;
 }
 
-.form-grp-signup{
+.form-grp-signup {
     display: flex;
     justify-content: center;
 }
 
-.welcome-back-img{
+.welcome-back-img {
     height: 100%;
     background: #37BC9B;
     border-left: 1px solid #37BC9B;
@@ -5038,18 +5045,23 @@ label {
 }
 
 
-#sign-up-input{
+#sign-up-input {
     width: 100%;
     border-radius: 5px;
 }
 
-.span-sign-in{
+#sign-up-input-password {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.span-sign-in {
     display: flex;
     justify-content: center;
     color: white;
 }
 
-.donor-signin-btn{
+.donor-signin-btn {
     border-radius: 10px;
     background: #37BC9B;
     font-family: sans-serif;
@@ -5062,16 +5074,16 @@ label {
     border-color: white;
 }
 
-.donor-signin-btn:hover{
+.donor-signin-btn:hover {
     background: #248e74;
     border-color: white;
 }
 
-#white-text{
+#white-text {
     color: white;
 }
 
-.age-sign-in{
+.age-sign-in {
     margin-top: 10px;
     gap: 57px;
     display: flex;
@@ -5079,13 +5091,14 @@ label {
     align-items: center;
 }
 
-.sign-in-btn{
+.sign-in-btn {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    flex-direction: column;
 }
 
-.btn-btn-sign-in{
+.btn-btn-sign-in {
     width: 250px;
     height: 50px;
     background-color: #2bae66ff;
@@ -5095,11 +5108,11 @@ label {
     border-radius: 10px;
 }
 
-.btn-btn-sign-in:hover{
-    background-color:#258651 ;
+.btn-btn-sign-in:hover {
+    background-color: #258651;
 }
 
-.container-wrap11{
+.container-wrap11 {
     display: flex;
 }
 
@@ -5113,34 +5126,36 @@ label {
     padding-left: 15px;
 }
 
-.country-name{
+.country-name {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.preload{
+
+.preload {
     background-color: red;
     display: flex;
     justify-content: center;
 }
-.wrapper-loader{
-position: absolute;
-z-index: 1;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+
+.wrapper-loader {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#chart-wrapper{
+#chart-wrapper {
     display: none;
 }
 
-.news-wrapper{
+.news-wrapper {
     display: none;
 }
 
-.loader-wrapper{
+.loader-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -5151,7 +5166,7 @@ align-items: center;
     background: white;
 }
 
-.wrapper-loader-white{
+.wrapper-loader-white {
     background-color: white;
     position: absolute;
     z-index: 1;
@@ -5160,32 +5175,69 @@ align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
 
-    .table-box { 
-        margin: 50px auto;
-    }
-    .table-row { 
-        display: table;
-        width:80%;
-        margin: 10px auto; 
-        font-family: sans-serif; 
-        background: transparent;
-        padding: 12px 0;
-        color: #000000 ; 
-        font-size: 13px;
-        box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
-    }
-    
-    .table-cell { 
-        display: table-cell;	
-        width: 16%;
-        text-align:center;
-        padding: 4px 0;
-        border-right:1px solid #d6d4d4;
-        vertical-align:middle;
-    }
-    
-    #date-width{
-        width: 171px;
-    }
+.table-box {
+    margin: 50px auto;
+}
+
+.table-row {
+    display: table;
+    width: 80%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    background: transparent;
+    padding: 12px 0;
+    color: #000000;
+    font-size: 13px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+}
+
+.table-cell {
+    display: table-cell;
+    width: 16%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid #d6d4d4;
+    vertical-align: middle;
+}
+
+#date-width {
+    width: 171px;
+}
+
+.text-align {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#login-btn-index {
+    padding: 18px 40px;
+    font-weight: 600;
+}
+
+.show-pass-checkbox {
+    display: block !important;
+    vertical-align: unset !important;
+    cursor: pointer !important;
+    height: unset !important;
+    left: unset !important;
+    margin-top: unset !important;
+    position: unset !important;
+    width: unset !important;
+}
+
+.show-pass-txt{
+    margin: 5px !important;
+
+}
+
+.checkbox-text{
+    display: flex;
+    gap: 8px;
+}
+
+.bg-green{
+    background-color: #2bae66ff;
+}

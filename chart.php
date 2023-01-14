@@ -4,6 +4,10 @@ include 'database.php';
 $id= $_SESSION["id"];
 $sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
 $row  = mysqli_fetch_array($sql);
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    echo '<script>document.getElementById("nav user-menu").remove();</script>';
+    echo '<script>document.getElementById("nav user-menu").append("<a href="login.php"><button class="btn-primary" id="login-btn-index">login!</button></a>")</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,10 +40,7 @@ $row  = mysqli_fetch_array($sql);
             <i class="fa fa-bars"></i>
             </a>
 
-            <ul class="nav user-menu">
-
-
-
+            <ul class="nav user-menu" id="nav user-menu">
                 <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
@@ -47,7 +48,7 @@ $row  = mysqli_fetch_array($sql);
                 </a>
                 <div class="dropdown-menu">
                 <div class="user-text">
-                <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?><</h6>
+                <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
                 <a class="dropdown-item" href="profileSetting.php">My profile</a>
                 <a class="dropdown-item" href="login.php">Logout</a>
                 </div>

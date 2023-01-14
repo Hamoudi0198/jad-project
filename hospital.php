@@ -44,7 +44,7 @@ $row  = mysqli_fetch_array($sql);
                     </a>
                     <div class="dropdown-menu">
                     <div class="user-text">
-                    <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
+                    <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
                     <a class="dropdown-item" href="profileSetting.php">My profile</a>
                     <a class="dropdown-item" href="login.php">Logout</a>
                     </div>
@@ -107,7 +107,7 @@ $row  = mysqli_fetch_array($sql);
                             <div class="house-info">
                                <p  class="title-color">Private Hospital</p>
                                <h3 class="hospital-title-flex">Ain Wzen Hospital  </h3>
-                               <label for="ain-wzen-hospital"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>   <a href="https://www.google.com/maps/search/Ain+Wzen+Hospital/@33.8590071,35.3797205,11z/data=!3m1!4b1" id="ain-wzen-hospital"  target="_blank" > Al Chouf  </a> </p></label>
+                               <a href="https://www.google.com/maps/search/Ain+Wzen+Hospital/@33.8590071,35.3797205,11z/data=!3m1!4b1" id="ain-wzen-hospital"  target="_blank" ><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Al Chouf</p></a>
                                <p class="hospital-text-align"> <span class="material-symbols-outlined">
                                 call
                                 </span> 05/509001 - 05/509002 - 05/509003 - 05/509004</p>
@@ -130,7 +130,7 @@ $row  = mysqli_fetch_array($sql);
                             <div class="house-info">
                                <p  class="title-color">Private Hospital</p>
                                <h3 class="hospital-title-flex1">American University Of Beirut Medial Center</h3>
-                               <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?rlz=1C1BNSD_enLB1001LB1001&q=American+University+Of+Beirut+Medical+Center&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjUsNeijqz8AhXARKQEHbnzBiIQ_AUoAXoECAEQAw" target="_blank"> Beirut  </a> </p>
+                               <a href="https://www.google.com/maps?rlz=1C1BNSD_enLB1001LB1001&q=American+University+Of+Beirut+Medical+Center&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjUsNeijqz8AhXARKQEHbnzBiIQ_AUoAXoECAEQAw" target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Beirut</p></a> 
                                <p class="hospital-text-align"> <span class="material-symbols-outlined">
                                 call
                                 </span> 01/350000 - 01/340460</p>
@@ -153,7 +153,7 @@ $row  = mysqli_fetch_array($sql);
                             <div class="house-info">
                                <p  class="title-color"> Public Hospital </p>
                                <h3 class="hospital-title-flex">Baalbeck Governmental Hospital</h3>
-                               <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A8%D8%B9%D9%84%D8%A8%D9%83+%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%E2%80%AD/@33.9990124,36.2115953,17z/data=!3m1!4b1!4m5!3m4!1s0x1518a3d5cd8122dd:0x17c8a4e104644752!8m2!3d33.9990124!4d36.213784"                    target="_blank"> Baalback  </a> </p>
+                               <a href="https://www.google.com/maps/place/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A8%D8%B9%D9%84%D8%A8%D9%83+%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%E2%80%AD/@33.9990124,36.2115953,17z/data=!3m1!4b1!4m5!3m4!1s0x1518a3d5cd8122dd:0x17c8a4e104644752!8m2!3d33.9990124!4d36.213784" target="_blank"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Baalback</p></a>
                                <p class="hospital-text-align"> <span class="material-symbols-outlined">
                                 call
                                 </span>08/370880</p>
@@ -176,7 +176,7 @@ $row  = mysqli_fetch_array($sql);
                             <div class="house-info">
                                <p  class="title-color">Private Hospital</p>
                                <h3 class="hospital-title-flex">Bahman Hospital</h3>
-                               <p class="hospital-text-align"> <span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=bahman+hospital+lebanon&rlz=1C1BNSD_enLB1001LB1001&uact=5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzILCC4QgAQQxwEQrwEyAggmMgIIJjIFCAAQhgM6CggAEEcQ1gQQsAM6BwgAELADEEM6EgguEMcBEK8BEMgDELADEEMYAToFCAAQgAQ6CwguEK8BEMcBEIAEOgQIABBDSgQIQRgASgQIRhgBUKYDWLsLYOQMaAFwAXgAgAHfA4gB7QqSAQM0LTOYAQCgAQHIARTAAQHaAQYIARABGAg&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiq6fqLg6f8AhV9UqQEHV0dAh8Q_AUoAXoECAEQA" target="_blank"> Baabda  </a> </p>
+                               <a href="https://www.google.com/maps?q=bahman+hospital+lebanon&rlz=1C1BNSD_enLB1001LB1001&uact=5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzILCC4QgAQQxwEQrwEyAggmMgIIJjIFCAAQhgM6CggAEEcQ1gQQsAM6BwgAELADEEM6EgguEMcBEK8BEMgDELADEEMYAToFCAAQgAQ6CwguEK8BEMcBEIAEOgQIABBDSgQIQRgASgQIRhgBUKYDWLsLYOQMaAFwAXgAgAHfA4gB7QqSAQM0LTOYAQCgAQHIARTAAQHaAQYIARABGAg&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiq6fqLg6f8AhV9UqQEHV0dAh8Q_AUoAXoECAEQA" target="_blank"> <p class="hospital-text-align"> <span class="material-symbols-outlined">location_on</span>Baabda</p></a>
                                <p class="hospital-text-align"> <span class="material-symbols-outlined">
                                 call
                                 </span> 01/545000 - 01/544000</p>
@@ -199,8 +199,7 @@ $row  = mysqli_fetch_array($sql);
                             <div class="house-info">
                                <p  class="title-color">Public Hospital</p>
                                <h3 class="hospital-title-flex">Bcharreh Governmental Hospital </h3>
-                               <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?bih=730&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&q=Bcharre+Governmental+Hospital&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj44ImAgaf8AhVNTaQEHdRYAiEQ_AUoAXoECAEQAw
-                                "   target="_blank"> Bcharreh  </a> </p>
+                               <a href="https://www.google.com/maps?bih=730&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&q=Bcharre+Governmental+Hospital&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj44ImAgaf8AhVNTaQEHdRYAiEQ_AUoAXoECAEQAw"   target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Bcharreh</p></a>
                                <p class="hospital-text-align"> <span class="material-symbols-outlined">
                                 call
                                 </span> 06/671357</p>
@@ -223,8 +222,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Public Hospital</p>
                    <h3 class="hospital-title-flex">Bint jbeil governmental hospital</h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/Bint+Jbeil+Governmental+Hospital/@33.12751,35.4334637,17z/data=!3m1!4b1!4m5!3m4!1s0x151e9daa8b224519:0x9169befe476fe2e8!8m2!3d33.12751!4d35.4356524
-                    "  target="_blank"> Bint Jbeil  </a> </p>
+                   <a href="https://www.google.com/maps/place/Bint+Jbeil+Governmental+Hospital/@33.12751,35.4334637,17z/data=!3m1!4b1!4m5!3m4!1s0x151e9daa8b224519:0x9169befe476fe2e8!8m2!3d33.12751!4d35.4356524"  target="_blank"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Bint Jbeil</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 07/452000</p>
@@ -247,7 +245,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Public Hospital</p>
                    <h3 class="hospital-title-flex">CHU Notre Dame De Secours Hospital </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=CHU+Notre+Dame+De+Secours+Hospital&rlz=1C1BNSD_enLB1001LB1001&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiggJHajqz8AhVRVqQEHadoASAQ_AUoAXoECAEQAw        "  target="_blank"> Jbeil  </a> </p>
+                   <a href="https://www.google.com/maps?q=CHU+Notre+Dame+De+Secours+Hospital&rlz=1C1BNSD_enLB1001LB1001&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiggJHajqz8AhVRVqQEHadoASAQ_AUoAXoECAEQAw"  target="_blank"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Jbeil</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 09-541700   </p>
@@ -270,8 +268,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Private Hospital</p>
                    <h3 class="hospital-title-flex">Dar Al Amal Hospital  </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/Dar+Al+Amal+University+Hospital/@33.9839773,36.1588969,17z/data=!3m1!4b1!4m5!3m4!1s0x1518a462286fd7d1:0x6e45682cb11bd825!8m2!3d33.9839773!4d36.1610856
-                    "  target="_blank"> Baalback  </a> </p>
+                   <a href="https://www.google.com/maps/place/Dar+Al+Amal+University+Hospital/@33.9839773,36.1588969,17z/data=!3m1!4b1!4m5!3m4!1s0x1518a462286fd7d1:0x6e45682cb11bd825!8m2!3d33.9839773!4d36.1610856"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Baalback</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 08/340620 - 08/340523 </p>
@@ -294,7 +291,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Public Hospital</p>
                    <h3 class="hospital-title-flex">Ftouh Keserwan Govermnental Hospital</h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/search/Ftouh+Keserwan+Governmental+Hospital/@34.0454402,35.6313593,15z/data=!3m1!4b1?hl=en      target="_blank"> Keserwan  </a> </p>
+                   <a href="https://www.google.com/maps/search/Ftouh+Keserwan+Governmental+Hospital/@34.0454402,35.6313593,15z/data=!3m1!4b1?hl=en      target="_blank"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> Keserwan </p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span>09/440440  </p>
@@ -317,7 +314,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Public Hospital</p>
                    <h3 class="hospital-title-flex">Hermel Governmental Hospital </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/Hermel+Governmental+Hospital+%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A7%D9%84%D9%87%D8%B1%D9%85%D9%84+%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%E2%80%AD/@34.3814384,36.4222345,17z/data=!3m1!4b1!4m5!3m4!1s0x1522434595b36667:0xa757c302fc132418!8m2!3d34.3814384!4d36.4244232"  target="_blank"> Hermel </a> </p>
+                   <a href="https://www.google.com/maps/place/Hermel+Governmental+Hospital+%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A7%D9%84%D9%87%D8%B1%D9%85%D9%84+%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%E2%80%AD/@34.3814384,36.4222345,17z/data=!3m1!4b1!4m5!3m4!1s0x1522434595b36667:0xa757c302fc132418!8m2!3d34.3814384!4d36.4244232"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Hermel</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 08/225310 </p>
@@ -340,7 +337,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Private Hospital</p>
                    <h3 class="hospital-title-flex">Hotel Dieu hospital </h3>
-                    <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=Hotel+Dieu+hospital&rlz=1C1BNSD_enLB1001LB1001&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiNppfGjqz8AhU0XaQEHfyLCicQ_AUoAXoECAEQAw"  target="_blank"> Beirut  </a> </p>  
+                   <a href="https://www.google.com/maps?q=Hotel+Dieu+hospital&rlz=1C1BNSD_enLB1001LB1001&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiNppfGjqz8AhU0XaQEHfyLCicQ_AUoAXoECAEQAw"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Beirut</p></a> 
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 01/615300 - 01/615400   </p>
@@ -365,7 +362,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color">Private Hospital</p>
                    <h3 class="hospital-title-flex">Makasid Hospital  </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=MAKASSED+hospital+lebanon&bih=730&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjqwaS7gqf8AhVgaqQEHWh1Bq0Q_AUoAXoECAEQAw "  target="_blank"> Beirut  </a> </p>
+                   <a href="https://www.google.com/maps?q=MAKASSED+hospital+lebanon&bih=730&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjqwaS7gqf8AhVgaqQEHWh1Bq0Q_AUoAXoECAEQAw "  target="_blank"><p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> Beirut</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span> 01-636000  </p>
@@ -388,7 +385,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color"> Public Hospital</p>
                    <h3 class="hospital-title-flex1">President Elias Harawi Governmental Hospital </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=President+Elias+Harawi+Governmental+Hospital&rlz=1C1BNSD_enLB1001LB1001&uact=5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCCEQoAEQCjIHCCEQoAEQCjIHCCEQoAEQCkoECEEYAEoECEYYAFC_A1i_A2CPCGgBcAF4AIABmgKIAZoCkgEDMi0xmAEAoAEBoAECsAEAwAEB&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj5gqTsjqz8AhUScKQEHTItDjQQ_AUoA3oECAEQBQ"  target="_blank"> Beirut </a> </p>
+                   <a href="https://www.google.com/maps?q=President+Elias+Harawi+Governmental+Hospital&rlz=1C1BNSD_enLB1001LB1001&uact=5&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCCEQoAEQCjIHCCEQoAEQCjIHCCEQoAEQCkoECEEYAEoECEYYAFC_A1i_A2CPCGgBcAF4AIABmgKIAZoCkgEDMi0xmAEAoAEBoAECsAEAwAEB&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj5gqTsjqz8AhUScKQEHTItDjQQ_AUoA3oECAEQBQ"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Beirut</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined">
                     call
                     </span>08-825600 </p>
@@ -411,7 +408,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p class="title-color"> Private Hospital</p>
                    <h3 class="hospital-title-flex">Rizk Hospital - LAU Medical Center</h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/LAU+Medical+Center-Rizk+Hospital/@33.885264,35.5128443,17z/data=!3m1!4b1!4m5!3m4!1s0x151f170247c61139:0xd9ea41e9cfc6011e!8m2!3d33.885264!4d35.515033?hl=en "  target="_blank"> Beirut </a> </p>
+                   <a href="https://www.google.com/maps/place/LAU+Medical+Center-Rizk+Hospital/@33.885264,35.5128443,17z/data=!3m1!4b1!4m5!3m4!1s0x151f170247c61139:0xd9ea41e9cfc6011e!8m2!3d33.885264!4d35.515033?hl=en "  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Beirut</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined"> call  </span> 01/200800 - 01/328800</p>
                    <i class="fas fa-star"></i>
                    <i class="fas fa-star"></i>
@@ -431,7 +428,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p class="title-color"> Private Hospital</p>
                    <h3 class="hospital-title-flex">Sacre Coeur Hospital  </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps?q=Sacre+Coeur+Hospital+lebanon&source=lmns&bih=666&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&sa=X&ved=2ahUKEwir-MDhgqf8AhWwZaQEHWj7ApYQ_AUoAXoECAEQAQ"  target="_blank"> Baabda  </a> </p>
+                   <a href="https://www.google.com/maps?q=Sacre+Coeur+Hospital+lebanon&source=lmns&bih=666&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&sa=X&ved=2ahUKEwir-MDhgqf8AhWwZaQEHWj7ApYQ_AUoAXoECAEQAQ"  target="_blank"> B<p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Baabda</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined"> call  </span>05/456293 </p>
                    <i class="fas fa-star"></i>
                    <i class="fas fa-star"></i>
@@ -451,7 +448,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color"> Public Hospital</p>
                    <h3 class="hospital-title-flex">Saida Governmental Hospital  </h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/Sidon+Governmental+Hospital/@33.545985,35.3796607,17z/data=!3m1!4b1!4m5!3m4!1s0x151ef02e5e3b4519:0x7eea25f57133aacc!8m2!3d33.545985!4d35.3818494?hl=en"  target="_blank"> Saida  </a> </p>
+                   <a href="https://www.google.com/maps/place/Sidon+Governmental+Hospital/@33.545985,35.3796607,17z/data=!3m1!4b1!4m5!3m4!1s0x151ef02e5e3b4519:0x7eea25f57133aacc!8m2!3d33.545985!4d35.3818494?hl=en"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> Saida</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined"> call  </span>07/721606 - 07/751329 </p>
                    <i class="fas fa-star"></i>
                    <i class="fas fa-star"></i>
@@ -471,7 +468,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p  class="title-color"> Public Hospital</p>
                    <h3 class="hospital-title-flex">Tripoli Governmental Hospital</h3>
-                   <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> <a href="https://www.google.com/maps/place/Tripoli+Governmental+hospital/@34.4374228,35.8580718,17z/data=!3m1!4b1!4m5!3m4!1s0x1521f425fbbbc3e9:0x4cbffb9bd0ad17c8!8m2!3d34.4374228!4d35.8602605"  target="_blank"> Tripoli </a> </p>
+                   <a href="https://www.google.com/maps/place/Tripoli+Governmental+hospital/@34.4374228,35.8580718,17z/data=!3m1!4b1!4m5!3m4!1s0x1521f425fbbbc3e9:0x4cbffb9bd0ad17c8!8m2!3d34.4374228!4d35.8602605"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span> Tripoli </p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined"> call  </span>06/385300</p>
                    <i class="fas fa-star"></i>
                    <i class="fas fa-star"></i>
@@ -485,22 +482,11 @@ $row  = mysqli_fetch_array($sql);
                 </div>
             </div>       
             </div>
-            
-        
         </main>
-        </body>
-        
-
-
     </div>
     </div>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
-<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/js/chart.js"></script>
-<script src= "assets/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script> -->
 </html>

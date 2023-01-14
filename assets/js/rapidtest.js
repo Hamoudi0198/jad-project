@@ -35,7 +35,7 @@ const submit = () => {
 proba += parseFloat(this.value);
   });
   $(".result-tab").append("<div class='result-container'><div class='result-btn'><button id='close-btn-result' onclick='closeResult()'><span class='material-symbols-outlined'>close</span></button></div><img src='' width='354px' height='250px' id='result-img'><div class='result-text-btn'><h2 id='result-txt' class='text-center'></h2><p id='result-mini-text' class='text-center'></p><p id='negative-text' class='text-center'></p><input type='button' onclick='retakeTest()' value='Retake Test'></div></div>");
-  if (proba >= 70) {
+  if (proba >= 40) {
     covidPositive();
   } else {
     covidNegative();

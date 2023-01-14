@@ -44,7 +44,7 @@ $row  = mysqli_fetch_array($sql);
                 </a>
                 <div class="dropdown-menu">
                 <div class="user-text">
-                <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
+                <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
                 <a class="dropdown-item" href="profileSetting.php">My profile</a>
                 <a class="dropdown-item" href="login.php">Logout</a>
                 </div>
@@ -91,22 +91,12 @@ $row  = mysqli_fetch_array($sql);
                 </div>
 </div>
 <div class="page-wrapper">
-    <!-- <div class="preload">
-        <div class="wrapper-loader">
-          <div class="loader"></div>
-        </div>
-    </div> -->
-    <!-- <div class="news-wrapper"> -->
 <div class="content container-fluid" id="content container-fluid">
 <div class="row">
-<!-- </div> -->
 </div>
 </div>
 </div>
 </div>
-
-
-
 <script src="assets/js/news.js"></script>
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

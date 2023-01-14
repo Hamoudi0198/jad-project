@@ -265,3 +265,15 @@
     }
   });
 })(jQuery);
+
+
+const showPassword = () => {
+  let pass = document.getElementById("sign-up-input-password");
+  if (pass.type === "password") {
+    pass.type = "text";
+  } else {
+    pass.type = "password";
+  }
+
+}
+

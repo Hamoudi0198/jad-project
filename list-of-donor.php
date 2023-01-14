@@ -1,11 +1,3 @@
-<?php
-session_start();
-include 'donorDatabase.php';
-$id= $_SESSION["id"];
-$sql=mysqli_query($conn,"SELECT * FROM user where id='$id' ");
-$row  = mysqli_fetch_array($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +28,14 @@ $row  = mysqli_fetch_array($sql);
                 <i class="fa fa-bars"></i>
                 </a>
                 <ul class="nav user-menu">
+
+                <?php
+session_start();
+include 'database.php';
+$id= $_SESSION["id"];
+$sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
+$row  = mysqli_fetch_array($sql);
+?>
                     <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
@@ -43,7 +43,7 @@ $row  = mysqli_fetch_array($sql);
                     </a>
                     <div class="dropdown-menu">
                     <div class="user-text">
-                    <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
+                    <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
                     <a class="dropdown-item" href="profileSetting.php">My profile</a>
                     <a class="dropdown-item" href="login.php">Logout</a>
                     </div>
@@ -89,147 +89,54 @@ $row  = mysqli_fetch_array($sql);
                     </div>
     </div>
         <div class="page-wrapper">
-             <div class="table-box"> 
-                    <div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> ID </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> First Name</p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Last Name </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Email </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Age </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Blood Type </p>
-                        </div>
-                    </div>
-                    <div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div>
-                    <div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div>
-                    <div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div><div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div><div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div><div class="table-row"> 
-                        <div class="table-cell"> 
-                            <p> 1 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> Jad </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Houry </p>
-                        </div>
-                        <div class="table-cell">
-                            <p> jadh@gmail.com </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>23 </p>
-                        </div>
-                        <div class="table-cell">
-                            <p>O+</p>
-                        </div>
-                    </div>
-                    </div>
-                          </div>
-                </div>
+        <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <div class="card mt-5">
+            <div class="card-header">
+              <h2 class="display-6 text-center">List Of Registered Donors</h2>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered text-center">
+                <tr class="bg-green">
+                    <?php
+                    require_once 'donorDatabase.php';
+                    require_once 'functions.php';
+                    $result = dispaly_data();
+                    ?>
+                  <td> ID </td>
+                  <td> First Name </td>
+                  <td> Last Name </td>
+                  <td> Username </td>
+                  <td> Email </td>
+                  <td> Bloodtype </td>
+                  <td> Age </td>
+                </tr>
+                <tr>
+                <?php 
+
+                  while($row = mysqli_fetch_assoc($result))
+                  {
+                ?>
+                  <td><?php echo $row['id']; ?></td>
+                  <td><?php echo $row['first']; ?></td>
+                  <td><?php echo $row['last']; ?></td>
+                  <td><?php echo $row['username']; ?></td>
+                  <td><?php echo $row['email']; ?></td>
+                  <td><?php echo $row['bloodtype']; ?></td>
+                  <td><?php echo $row['age']; ?></td>
+                </tr>
+                <?php    
+                  }
+                
+                ?>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
                 </div>
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>

@@ -29,42 +29,26 @@ $row  = mysqli_fetch_array($sql);
                 <img src="assets/img/Covidcenter_logo.png" id="mini-logo" width="30" height="30">
             </a>
         </div>
-
         <a href="javascript:void(0);" id="toggle_btn">
             <span class="material-symbols-outlined" id="material-symbols-outlined-menu">menu</span></a>
-            
             <a class="mobile_btn" id="mobile_btn">
             <i class="fa fa-bars"></i>
             </a>
-
             <ul class="nav user-menu">
-
-
-
                 <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
-                <?php
-session_start();
-include 'database.php';
-$id= $_SESSION["id"];
-$sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
-$row  = mysqli_fetch_array($sql);
-?>
                 <span class="user-img"><p id="account-name"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></p></span>
                 </a>
                 <div class="dropdown-menu">
                 <div class="user-text">
-                <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?>/h6>
+                <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?>/h6>
                 <a class="dropdown-item" href="profileSetting.php">My profile</a>
                 <a class="dropdown-item" href="login.php">Logout</a>
                 </div>
                 </div>
                 </li>
                 </ul>
-
-
-
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -103,9 +87,6 @@ $row  = mysqli_fetch_array($sql);
             </div>
         </div>
 </div>
-
-
-
 <div class="page-wrapper">
 <div class="content container-fluid">
 <div class="page-header">
@@ -122,22 +103,22 @@ $row  = mysqli_fetch_array($sql);
  <h4 class="card-title">User Information Settings</h4>
 </div>
 <div class="card-body">
-<form action="#">
+<form action="#" action="get">
 <div class="form-group">
 <label>First Name:</label>
-<input type="text" class="form-control" value="">
+<input type="text" class="form-control" value="<?php echo $_SESSION["first"] ?>">
 </div>
 <div class="form-group">
 <label>Last Name:</label>
-<input type="text" class="form-control" value="">
+<input type="text" class="form-control" value="<?php echo $_SESSION["last"] ?>">
 </div>
 <div class="form-group">
 <label>Email Address:</label>
-<input type="email" class="form-control" value="">
+<input type="email" class="form-control" value="<?php echo $_SESSION["email"] ?>">
 </div>
 <div class="form-group">
 <label>Password:</label>
-<input type="password" class="form-control" value="">
+<input type="password" class="form-control" value="<?php echo $_SESSION["email"] ?>">
 </div>
 <div class="text-end">
 <button type="submit" class="btn btn-primary">Submit</button>

@@ -44,11 +44,11 @@ $row  = mysqli_fetch_array($sql);
                 <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                 <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
-                <span class="user-img"><p id="account-name"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?><</p></span>
+                <span class="user-img"><p id="account-name"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></p></span>
                 </a>
                 <div class="dropdown-menu">
                 <div class="user-text">
-                <h6><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?><</h6>
+                <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
                 <a class="dropdown-item" href="profileSetting.php">My profile</a>
                 <a class="dropdown-item" href="login.php">Logout</a>
                 </div>

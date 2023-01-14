@@ -13,7 +13,7 @@ function readMore(){
           [y] +
           "' id='card-text" +
           [y] +
-          "'></p></div><div class='button-container'><a class='btn btn-primary' href='#'' id='link" +
+          "'></p></div><div class='button-container'><a class='btn btn-primary' href='#' target = 'blank'' id='link" +
           [y] +
           "'>Read More</a></div></div></div>"
     )
