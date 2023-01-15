@@ -26,7 +26,7 @@
               </div>
               </div>
            <div class="container-sign-up">
-          <h2 class="card-title text-center">account Login</h2>
+          <h2 class="card-title text-center">Login</h2>
           <?php
 session_start();
 if(isset($_POST['save']))

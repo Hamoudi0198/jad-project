@@ -73,7 +73,7 @@ const getLebanonData = () =>{
       let responseRecoveryCases = response.response[0].cases.recovered ?? 0;
       let totalDeathCases = response.response[0].deaths.total ?? 0;
 
-      // dailyCases.innerHTML = responseDailyCases;
+      dailyCases.innerHTML = responseDailyCases;
       criticalCases.innerHTML = responseCriticalCases;
       dailyDeathCases.innerHTML = responseDeathCases;
       totalCases.innerHTML = responseTotalCases;

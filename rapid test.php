@@ -98,7 +98,7 @@ $row  = mysqli_fetch_array($sql);
         <h3 class="m-b-20">Covid 19 Rapid Test</h3>
         <ul class="symps" id="ul12">
         </ul>
-        <input type="button" name="Submit" disabled id="rapid-test-submit" value="Submit" onclick="submit()" />
+        <input type="button" name="Submit" id="rapid-test-submit" value="Submit" onclick="submit()" />
     </div>
     </div>
             <div class="result-tab" id="result-tab">    

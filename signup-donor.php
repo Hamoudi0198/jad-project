@@ -108,7 +108,7 @@
         </div>
         <div class="age-sign-in">
             <span>Enter Your Age</span>
-            <input type="number" min="1" max="150" name="age" placeholder="Age" required="required">
+            <input type="number" min="1" max="110" name="age" placeholder="Age" required="required">
         </div>
         <div class="sign-in-btn">
             <button type="submit" name="save" class="btn-btn-sign-in">Register Now</button>

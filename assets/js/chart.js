@@ -108,9 +108,9 @@ const options = {
     
       let unitedStatesDeath = response.response.filter(element => element.country == "USA")[0].deaths.total;
       let IndiaDeaths = response.response.filter(element => element.country == "India")[0].deaths.total;
-      let FranceDeaths = response.response.filter(element => element.country == "India")[0].deaths.total;
-      let GermanyDeaths = response.response.filter(element => element.country == "India")[0].deaths.total;
-      let BrazilDeaths = response.response.filter(element => element.country == "India")[0].deaths.total;
+      let FranceDeaths = response.response.filter(element => element.country == "France")[0].deaths.total;
+      let GermanyDeaths = response.response.filter(element => element.country == "Germany")[0].deaths.total;
+      let BrazilDeaths = response.response.filter(element => element.country == "Brazil")[0].deaths.total;
     
        worldTotalCases = [];
        worldTotalDeaths = [];
