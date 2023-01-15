@@ -44,7 +44,6 @@ $row = mysqli_fetch_array($sql);
                     <div class="dropdown-menu">
                         <div class="user-text">
                             <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
-                            <a class="dropdown-item" href="profileSetting.php">My profile</a>
                             <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </div>
@@ -126,15 +125,15 @@ $row = mysqli_fetch_array($sql);
                                             </tr>
                                             <tr>
                                                 <td class="text-nowrap">
-                                                    <div class="font-weight-600"><p class="country-name "id="country-India"></p></div>
+                                                    <div class="font-weight-600"><p class="country-name "id="country-Germany"></p></div>
                                                 </td>
-                                                <td class="text-nowrap" id="daily-cases-India"></td>
-                                                <td class="text-center" id="critical-cases-India"></td>
-                                                <td class="text-center" id="death-India"></td>
-                                                <td class="text-center text-success" id="recovery-cases-India"></td>
-                                                <td class="text-center" id="total-cases-India"></td>
+                                                <td class="text-nowrap" id="daily-cases-Germany"></td>
+                                                <td class="text-center" id="critical-cases-Germany"></td>
+                                                <td class="text-center" id="death-Germany"></td>
+                                                <td class="text-center text-success" id="recovery-cases-Germany"></td>
+                                                <td class="text-center" id="total-cases-Germany"></td>
                                                 <td class="text-end">
-                                                    <div class="font-weight-600 text-danger" id="total-deaths-India"></div>
+                                                    <div class="font-weight-600 text-danger" id="total-deaths-Germany"></div>
                                                 </td>
                                             </tr>
                                             <tr>

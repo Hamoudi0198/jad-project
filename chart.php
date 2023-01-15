@@ -49,7 +49,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
                 <div class="dropdown-menu">
                 <div class="user-text">
                 <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
-                <a class="dropdown-item" href="profileSetting.php">My profile</a>
                 <a class="dropdown-item" href="login.php">Logout</a>
                 </div>
                 </div>

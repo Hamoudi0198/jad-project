@@ -23,8 +23,8 @@ var j = [
   " fa-notes-medical",
   " fa-triangle-exclamation",
 ];
-let g = ["Usa", "India", "Spain", "China", "Brazil"];
-  
+let g = ["Usa", "Germany", "Spain", "China", "Brazil"];
+
 window.onload = function append() {
   for (var h = 0; h < 6; h++) {
     $(".row").append(
@@ -73,7 +73,7 @@ const getLebanonData = () =>{
       let responseRecoveryCases = response.response[0].cases.recovered ?? 0;
       let totalDeathCases = response.response[0].deaths.total ?? 0;
 
-      dailyCases.innerHTML = responseDailyCases;
+      // dailyCases.innerHTML = responseDailyCases;
       criticalCases.innerHTML = responseCriticalCases;
       dailyDeathCases.innerHTML = responseDeathCases;
       totalCases.innerHTML = responseTotalCases;
