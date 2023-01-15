@@ -30,12 +30,12 @@
                 <ul class="nav user-menu">
 
                 <?php
-session_start();
-include 'database.php';
-$id= $_SESSION["id"];
-$sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
-$row  = mysqli_fetch_array($sql);
-?>
+                session_start();
+                include 'database.php';
+                $id = $_SESSION["id"];
+                $sql = mysqli_query($conn, "SELECT * FROM users where id='$id' ");
+                $row = mysqli_fetch_array($sql);
+                ?>
                     <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-user" id="fa-solid-fa-user"></i>
@@ -43,7 +43,7 @@ $row  = mysqli_fetch_array($sql);
                     </a>
                     <div class="dropdown-menu">
                     <div class="user-text">
-                    <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?></h6>
+                    <h6 class="text-align"><?php echo $_SESSION["first"] ?> <?php echo $_SESSION["last"] ?> </h6>
                     <a class="dropdown-item" href="profileSetting.php">My profile</a>
                     <a class="dropdown-item" href="login.php">Logout</a>
                     </div>
@@ -137,8 +137,7 @@ $row  = mysqli_fetch_array($sql);
         </div>
       </div>
     </div>
-                </div>
-
+</div>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>

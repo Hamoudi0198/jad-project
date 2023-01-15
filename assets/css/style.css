@@ -4740,29 +4740,33 @@ label {
 }
 
 .chart-display-flex {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
 }
 
 .two-chart {
     display: flex;
-    margin-top: 100px;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 #pie-chart {
     display: block;
     box-sizing: border-box;
-    width: 550px !important;
-    height: 580px !important;
+    width: 800px !important;
+    height: 730px !important;
+    padding: 50px
 }
 
 #worldChart {
     display: block;
     box-sizing: border-box;
-    height: 591px !important;
-    width: 720px !important;
+    height: 639px !important;
+    width: 1000px !important;
+    padding: 50px;
 }
+
 
 #logo-small {
     margin-top: 8px;
@@ -5240,4 +5244,5 @@ label {
 
 .bg-green{
     background-color: #2bae66ff;
+    color: white;
 }

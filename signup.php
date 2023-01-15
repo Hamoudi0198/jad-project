@@ -91,11 +91,11 @@ if (isset($_SESSION["user"])) {
         </div>
 		<div class="login-create-btn">
         <div class="sign-in-btn">
-            <div class="checkbox-text">
+            <!-- <div class="checkbox-text">
                 <p class="show-pass-txt">show password</p>
             <input type="checkbox" onclick="showPassword()" class="show-pass-checkbox" value="Show password">
 
-            </div>
+            </div> -->
             <button type="submit" name="save" class="btn-btn-sign-in">Register Now</button>
         </div>
       </div>

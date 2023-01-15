@@ -106,8 +106,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
           <div class="chart-display-flex">
             <canvas id="line-chart"></canvas>
               <div class="two-chart">
-                <canvas id="pie-chart"></canvas>
                 <canvas id="worldChart"></canvas>
+                <canvas id="pie-chart"></canvas>
                 </div>
               </div>
         </div>

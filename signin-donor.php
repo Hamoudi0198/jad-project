@@ -33,19 +33,15 @@ if(isset($_POST['save']))
 {
     extract($_POST);
     include 'donorDatabase.php';
-    $sql=mysqli_query($conn,"SELECT * FROM user where email='$email' and password='md5($pass)'");
+    $sql=mysqli_query($conn, "SELECT * FROM user where email='$email' and password='md5($pass)'");
     $row  = mysqli_fetch_array($sql);
     if(is_array($row))
     {
-        $_SESSION["id"] = $row['id'];
-        $_SESSION["email"] = $row['email'];
-        $_SESSION["first"] = $row['first'];
-        $_SESSION["last"] = $row['last']; 
         header("Location: list-of-donor.php"); 
       }
     else
     {
-        echo "Invalid Email ID/Password";
+        echo "<div class='alert alert-danger'>Invalid Email ID/Password</div>";
     }
 }
 ?>
