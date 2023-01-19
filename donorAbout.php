@@ -28,14 +28,11 @@ $row  = mysqli_fetch_array($sql);
                 <img src="assets/img/Covidcenter_logo.png" id="mini-logo" width="30" height="30">
             </a>
         </div>
-
         <a href="javascript:void(0);" id="toggle_btn">
             <span class="material-symbols-outlined" id="material-symbols-outlined-menu">menu</span></a>
-            
             <a class="mobile_btn" id="mobile_btn">
             <i class="fa fa-bars"></i>
             </a>
-
             <ul class="nav user-menu" id="nav user-menu">
                 <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
@@ -50,9 +47,6 @@ $row  = mysqli_fetch_array($sql);
                 </div>
                 </li>
                 </ul>
-
-
-
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -71,7 +65,7 @@ $row  = mysqli_fetch_array($sql);
                         <li class="submenu">
                             <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
                             <ul style="display: none;">
-                            <li><a href="donorAbout.php"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>About</span></a></li>
+                            <li><a href="donorAbout.php" id="submenu-a-flex"><span id="dropmenu-span-register">About</span></a></li>
                             <li><a href="signup-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Register</span></a></li>
                             <li><a href="list-of-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
                             </ul>
