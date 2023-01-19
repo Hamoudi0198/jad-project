@@ -67,9 +67,10 @@ $row = mysqli_fetch_array($sql);
                             <li class="submenu">
                                 <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
                                 <ul style="display: none;">
-                                <li><a href="signup-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Register</span></a></li>
-                                <li><a href="list-of-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
-                                </ul>
+                            <li><a href="donorAbout.php" id="submenu-a-flex"><span id="dropmenu-span-register">About</span></a></li>
+                            <li><a href="signup-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Register</span></a></li>
+                            <li><a href="list-of-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
+                            </ul>
                                 </li>
                             <li>
                                 <a href="hospital.php"><span class="material-symbols-outlined" id="sidebar-icon">home_health</span><span>Hospitals</span></a>

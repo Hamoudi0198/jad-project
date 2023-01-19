@@ -4873,10 +4873,11 @@ label {
 
 .house {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding: 30px 0;
     border-top: 1px solid #ccc;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .house-img {
@@ -4889,7 +4890,7 @@ label {
 }
 
 .house-img img {
-    width: 100%;
+    width: 280px;
     border-radius: 12px;
 }
 
@@ -5245,4 +5246,196 @@ label {
 .bg-green{
     background-color: #2bae66ff;
     color: white;
+}
+
+
+
+
+.container-donor-about {
+    margin-top: 20px !important;
+    position:relative;
+    z-index:5;
+    max-width:92rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+    font-family:"poppins",sans-serif;
+    font-size:1.25rem;
+    line-height:1.6;
+}
+.text-donor-about { 
+    color: #7a7a7a;
+}
+.section-header-donor-about{
+    text-align:center;
+    margin-bottom: 1.5rem;
+}
+
+.title-donor-about{
+    position:relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 2.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.title-donor-about:before{
+    content:attr(data-title);
+    display: block;
+    margin-bottom:0.4rem;
+    color: #08BD51;
+    font-size: 1.15rem;
+    font-weight:500;
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+}
+
+.title-donor-about:after{ 
+    content:"";
+    position: absolute;
+    width:90px;
+    height:5px;
+    border-radius: 3px;
+    background-color: #08BD51;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.section-header-donor-about{
+    max-width: 600px;
+    margin:0 auto;
+}
+
+.cards-donor-about{ 
+    display:flex;
+    }
+    
+    .card-donor-about{
+        width:100%;
+        max-width: 390px;
+        min-height:520px;
+        background-color:var(--light-three);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding: 3rem 2rem;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    
+    .card-donor-about:before { 
+        content: attr(data-card);
+        position:absolute;
+        top:0;
+        right:0;
+        font-size:6rem;
+        font-weight:800;
+        line-height: 1;
+        color:var(--main-color);
+        opacity:0.025;
+        cursor:pointer;
+    }
+    
+    .card-donor-about:hover{ 
+        transform: translateY(-15px);
+    }
+
+    .card-wrap-donor-about { 
+        margin:1.7rem 0.8rem;
+    }
+
+    .icon{
+        width:90px;
+        margin-bottom:1.7rem;
+    }
+
+    .title-sm-donor-about {
+        color:#08BD51; /* var(--dark-one); */
+        font-weight:600;
+        font-size:1.6rem;
+    }
+    .card-donor-about .title-sm-donor-about{ 
+        line-height: 0.8;
+    }
+
+    .btn-about .small{
+        padding:0.7rem 1.8rem;
+        font-size:1rem;
+    }
+
+    .btn-about { 
+        display:inline-block;
+        padding: .85rem 2rem;
+        background :#08BD51;
+        color: white;
+        border-radius:2rem;
+        font-size:1.05rem;
+        text-transform:uppercase;
+        font-weight:500;
+        transition:1s;
+        text-decoration: none;
+    }
+    .btn-about:hover{
+        background-color :#14b140 !important;
+        color: white !important;
+    }
+
+    #title-about{
+        margin-top: 40px;
+    }
+
+.donor-about-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#a-about{
+    color: #7A7A7A !important;
+    text-decoration: none !important;
+}
+
+#a-about-black{
+    color: black !important;
+    text-decoration: none !important;
+}
+    
+.txt-bold{
+    font-weight: bold;
+}
+
+
+.title{
+    position:relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 2.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.title:before{
+    content:attr(data-title);
+    display: block;
+    margin-bottom:0.4rem;
+    color: #08BD51;
+    font-size: 1.15rem;
+    font-weight:500;
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+}
+
+.title:after{ 
+    content:"";
+    position: absolute;
+    width:90px;
+    height:5px;
+    border-radius: 3px;
+    background-color: #08BD51;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
 }

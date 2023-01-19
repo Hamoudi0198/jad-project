@@ -4,10 +4,6 @@ include 'database.php';
 $id= $_SESSION["id"];
 $sql=mysqli_query($conn,"SELECT * FROM users where id='$id' ");
 $row  = mysqli_fetch_array($sql);
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    echo '<script>document.getElementById("nav user-menu").remove();</script>';
-    echo '<script>document.getElementById("nav user-menu").append("<a href="login.php"><button class="btn-primary" id="login-btn-index">login!</button></a>")</script>';
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +71,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
                         <li class="submenu">
                             <a href="#"><span class="material-symbols-outlined" id="sidebar-icon">bloodtype</span><span>Plasma Donor</span><span class="menu-arrow"></span></a>
                             <ul style="display: none;">
+                            <li><a href="donorAbout.php" id="submenu-a-flex"><span id="dropmenu-span-register">About</span></a></li>
                             <li><a href="signup-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Register</span></a></li>
                             <li><a href="list-of-donor.php" id="submenu-a-flex"><span id="dropmenu-span-register">Donors List</span></a></li>
                             </ul>
@@ -113,7 +110,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script src= "assets/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="assets/js/script.js"></script>
