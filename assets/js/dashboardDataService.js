@@ -27,7 +27,7 @@ let g = ["Usa", "Germany", "Spain", "China", "Brazil"];
 
 window.onload = function append() {
   for (var h = 0; h < 6; h++) {
-    $(".row").append(
+    $(".row").append( 
       "<div class='col-xl-4 col-sm-4 col-12'><div class='card'><div class='card-body'><div class='dash-widget-header'><span class='dash-widget-icon" +
         y[h] +
         "'><i class='fa-solid" +
@@ -37,7 +37,7 @@ window.onload = function append() {
         "</p><p id='cases-" +
         w[h] +
         "' class='count'><div class='loader'></div></p></div></div></div></div></div>"
-    );
+    ); //append ya3ne bta3mil mtl element jdide la hayda el class (baby la row class)
   };
   getCountriesData();
   getLebanonData();
@@ -99,6 +99,7 @@ for (let h = 0; h < g.length; h++) {
     )
       .then((response) => response.json())
       .then((response) => {
+        console.log(response)
         elements = document.getElementsByClassName("wrapper-loader-white");
          for (element of elements) {
             element.remove();}

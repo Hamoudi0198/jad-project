@@ -114,7 +114,6 @@
                 </tr>
                 <tr>
                 <?php 
-
                   while($row = mysqli_fetch_assoc($result))
                   {
                 ?>
@@ -128,9 +127,7 @@
                 </tr>
                 <?php    
                   }
-                
-                ?>
-                
+                ?>   
               </table>
             </div>
           </div>

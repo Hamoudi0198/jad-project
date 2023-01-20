@@ -428,7 +428,7 @@ $row  = mysqli_fetch_array($sql);
                 <div class="house-info">
                    <p class="title-color"> Private Hospital</p>
                    <h3 class="hospital-title-flex">Sacre Coeur Hospital  </h3>
-                   <a href="https://www.google.com/maps?q=Sacre+Coeur+Hospital+lebanon&source=lmns&bih=666&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&sa=X&ved=2ahUKEwir-MDhgqf8AhWwZaQEHWj7ApYQ_AUoAXoECAEQAQ"  target="_blank"> B<p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Baabda</p></a>
+                   <a href="https://www.google.com/maps?q=Sacre+Coeur+Hospital+lebanon&source=lmns&bih=666&biw=1517&rlz=1C1BNSD_enLB1001LB1001&hl=en&sa=X&ved=2ahUKEwir-MDhgqf8AhWwZaQEHWj7ApYQ_AUoAXoECAEQAQ"  target="_blank"> <p class="hospital-text-align"><span class="material-symbols-outlined">location_on</span>Baabda</p></a>
                    <p class="hospital-text-align"> <span class="material-symbols-outlined"> call  </span>05/456293 </p>
                    <i class="fas fa-star"></i>
                    <i class="fas fa-star"></i>

@@ -78,9 +78,6 @@ $row = mysqli_fetch_array($sql);
                             <li>
                                 <a href="news.php"><span class="material-symbols-outlined" id="sidebar-icon">newspaper</span><span>News</span></a>
                             </li>
-                            <!-- <li>
-                                <a href="profileSetting.php"><span class="material-symbols-outlined" id="sidebar-icon">settings</span><span>Settings</span></a>
-                            </li> -->
                         </ul>
                         </li>
                         </ul>
@@ -118,7 +115,7 @@ $row = mysqli_fetch_array($sql);
                                                 <td class="text-nowrap" id="daily-cases-Usa"></td>
                                                 <td class="text-center" id="critical-cases-Usa"></td>
                                                 <td class="text-center" id="death-Usa"></td>
-                                                <td class="text-center text-success" id="recovery-cases-Usa"></td>
+                                                <td class="text-center text-success font-weight-600" id="recovery-cases-Usa"></td>
                                                 <td class="text-center" id="total-cases-Usa"></td>
                                                 <td class="text-end">
                                                     <div class="font-weight-600 text-danger" id="total-deaths-Usa"></div>
@@ -131,7 +128,7 @@ $row = mysqli_fetch_array($sql);
                                                 <td class="text-nowrap" id="daily-cases-Germany"></td>
                                                 <td class="text-center" id="critical-cases-Germany"></td>
                                                 <td class="text-center" id="death-Germany"></td>
-                                                <td class="text-center text-success" id="recovery-cases-Germany"></td>
+                                                <td class="text-center text-success font-weight-600" id="recovery-cases-Germany"></td>
                                                 <td class="text-center" id="total-cases-Germany"></td>
                                                 <td class="text-end">
                                                     <div class="font-weight-600 text-danger" id="total-deaths-Germany"></div>
@@ -144,7 +141,7 @@ $row = mysqli_fetch_array($sql);
                                                 <td class="text-nowrap" id="daily-cases-Spain"></td>
                                                 <td class="text-center" id="critical-cases-Spain"></td>
                                                 <td class="text-center" id="death-Spain"></td>
-                                                <td class="text-center text-success" id="recovery-cases-Spain"></td>
+                                                <td class="text-center text-success font-weight-600" id="recovery-cases-Spain"></td>
                                                 <td class="text-center" id="total-cases-Spain"></td>
                                                 <td class="text-end">
                                                     <div class="font-weight-600 text-danger" id="total-deaths-Spain"></div>
@@ -158,7 +155,7 @@ $row = mysqli_fetch_array($sql);
                                                 <td class="text-nowrap" id="daily-cases-China"></td>
                                                 <td class="text-center" id="critical-cases-China"></td>
                                                 <td class="text-center" id="death-China"></td>
-                                                <td class="text-center text-success" id="recovery-cases-China"></td>
+                                                <td class="text-center text-success font-weight-600" id="recovery-cases-China"></td>
                                                 <td class="text-center" id="total-cases-China"></td>
                                                 <td class="text-end">
                                                     <div class="font-weight-600 text-danger" id="total-deaths-China"></div>
@@ -171,7 +168,7 @@ $row = mysqli_fetch_array($sql);
                                                 <td class="text-nowrap" id="daily-cases-Brazil"></td>
                                                 <td class="text-center" id="critical-cases-Brazil"></td>
                                                 <td class="text-center" id="death-Brazil"></td>
-                                                <td class="text-center text-success" id="recovery-cases-Brazil"></td>
+                                                <td class="text-center text-success font-weight-600" id="recovery-cases-Brazil"></td>
                                                 <td class="text-center" id="total-cases-Brazil"></td>
                                                 <td class="text-end">
                                                     <div class="font-weight-600 text-danger" id="total-deaths-Brazil"></div>
@@ -197,5 +194,4 @@ $row = mysqli_fetch_array($sql);
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="assets/js/script.js"></script>
 </body>
-
 </html>
